@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>好友列表</title>
+    <script type=text/javascript src='dist/script/fontsizeset.js'></script>
+    <script type=text/javascript src='dist/script/zepto.js'></script>
+    <script type=text/javascript src='dist/script/common.js'></script>
+    <script type=text/javascript src='dist/script/moreLoad.js'></script>
+    <link rel="stylesheet" href="dist/style/reset.css">
+    <link rel="stylesheet" href="dist/style/style.css">
+    <link rel="stylesheet" href="dist/style/swiper.css">
+</head>
+<body style="background-color: #fff;">
+    <div class="friend-list container friend-container">
+        <div class="friend-list-banner">
+            <img src="dist/images/friend-list-banner_02.jpg" alt="">
+            <ul class="clearFix">
+                <li>
+                    <p id="friendCount"></p>
+                    <p>好友数量</p>
+                    <div class="clearFix">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </li>
+                <li>
+                    <p id="todayGold"></p>
+                    <p>今日贡献</p>
+                    <div class="clearFix">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </li>
+                <li>
+                    <p id="allGold"></p>
+                    <p>累计贡献</p>
+                </li>
+            </ul>
+        </div>
+        <div class="friend-list-content">
+            <ul class="clearFix list-option">
+                <li class="option-items" style="color:#ff5337;">活跃好友</li>
+                <li class="option-items">待唤醒好友</li>
+                <li id="option-speed"></li>
+            </ul>
+            <div>
+                <div class="list-info info-show">
+                    <table style="display: none" class="info-active">
+                        <thead>
+                        <tr class="clearFix">
+                            <th>
+                                昵称
+                                <div class="clearFix">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </th>
+                            <th>
+                                今日贡献
+                                <div class="clearFix">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </th>
+                            <th>累计贡献</th>
+                        </tr>
+                        </thead>
+                        <tbody id="romanceActive">
+
+                        </tbody>
+                    </table>
+                    <div class="list-info-null" id="info-active">
+                        <img style="width: 1.74rem;height: 2.58rem;display: block;margin: 0.48rem auto 0;" src="dist/images/friend-null-one_03.jpg" alt="">
+                        <p>暂时还没有好友呦～</p>
+                        <a class="invitation-friend" href="javascript:void(0);">赶紧去邀请好友吧</a>
+                    </div>
+                </div>
+                <div class="list-info-awaken info-show" style="display: none;">
+                    <table style="display: none;" class="info-awaken">
+                        <thead>
+                        <tr class="clearFix">
+                            <th>
+                                昵称
+                                <div class="clearFix">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </th>
+                            <th>
+                                累计贡献
+                                <div class="clearFix">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </th>
+                            <th>
+                                上次活跃
+                                <div class="clearFix">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="romanceAwaken">
+                        </tbody>
+                    </table>
+                    <div class="list-info-null" id="info-awaken">
+                        <img style="width: 2.7rem;height: 2.07rem;display: block;margin: 0.78rem auto 0.47rem;" src="dist/images/friend-null-two_03.jpg" alt="">
+                        <p>暂时没有需要唤醒的好友</p>
+                        <a class="invitation-friend" href="javascript:void(0);">赶紧去邀请好友吧</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-close" style="display:none;"></div>
+        <div class="invitation-shortcut-share" style="display: none;">
+            <div>
+                <div>
+                    <ul class="clearFix">
+                        <li>
+                            <a href="invitation://shortcutWx">
+                                <img src="dist/images/shortcut-share-ong_03.jpg" alt="">
+                                <p>微信邀请</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="invitation://shortcutFace">
+                                <img src="dist/images/shortcut-share-two_05.jpg" alt="">
+                                <p>面对面邀请</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="clearFix">
+                        <li>
+                            <a href="invitation://shortcutFriend">
+                                <img src="dist/images/shortcut-share-three_10.jpg" alt="">
+                                <p>朋友圈邀请</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="invitation://shortcutWxAll">
+                                <img src="dist/images/shortcut-share-four_10.jpg" alt="">
+                                <p>微信群发</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="invitation://shortcutQq">
+                                <img src="dist/images/shortcut-share-five_10.jpg" alt="">
+                                <p>QQ好友</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="invitation://shortcutDx">
+                                <img src="dist/images/shortcut-share-six_10.jpg" alt="">
+                                <p>短信邀请</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            var getString = new GetQueryString();
+            var scrollNum = 1; //翻页
+            var typeNum = 1; //类型
+            var trNum = 0; //列表索引
+            // 列表切换
+            $('.option-items').on('click', function () {
+                var index = $(this).index();
+                if(index == 0){
+                    $('#romanceActive').children().remove();
+                    $('.info-show').eq(0).show().siblings().hide();
+                    $('#option-speed').css('left','0%');
+                    $(this).css('color','#ff5337').siblings().css('color','#000');
+                    typeNum = 1;
+                    scrollNum = 1;
+                }else{
+                    $('#romanceAwaken').children().remove();
+                    $('.info-show').eq(1).show().siblings().hide();
+                    $('#option-speed').css('left','50%');
+                    $(this).css('color','#ff5337').siblings().css('color','#000');
+                    typeNum = 2;
+                    scrollNum = 1;
+                }
+                dropload.resetload();
+                friendList("", typeNum, scrollNum);
+            })
+            // 唤醒模态框
+
+            $('.modal-close').on('click', function(){
+                $(this).hide();
+                $('.talk-modal-box').hide();
+            })
+            // 渲染活跃好友
+            function romanceActive(data){
+                var info;
+                data.map(function(list, i){
+                    info = '<tr class="clearFix">\n' +
+                        '                            <td>\n' +
+                        '                                <p>\n' +
+                        list.nickName +
+                        '                                </p>\n' +
+                        '                            </td>\n' +
+                        '                            <td>\n' +
+                        '                                <p>\n' +
+                        list.todayGold +
+                        '                                </p>\n' +
+                        '                            </td>\n' +
+                        '                            <td>\n' +
+                        '                                <p>'+list.allGold+'</p>\n' +
+                        '                            </td>\n' +
+                        '                        </tr>';
+                    $('#romanceActive').append(info);
+                })
+            }
+            // 渲染唤醒好友
+            function romanceAwaken(data) {
+                var awaken;
+                var prompt = '';
+                data.map(function (list, i) {
+                    if(list.wakeAlready == 0){
+                        prompt = '<p class="option-prompt">提醒Ta</p>';
+                    }else{
+                        prompt = '<p class="option-prompt-style">已提醒</p>';
+                    }
+                    awaken = '<tr class="trNum clearFix">\n' +
+                        '                            <td>\n' +
+                        '                                <p>\n' +
+                        list.nickName +
+                        '                                </p>\n' +
+                        '                            </td>\n' +
+                        '                            <td>\n' +
+                        '                                <p>'+list.allGold+'</p>\n' +
+                        '                            </td>\n' +
+                        '                            <td>\n' +
+                        '                                <p>'+list.loginDate+'</p>\n' +
+                        '                            </td>\n' +
+                        '                            <td>\n' +
+                        prompt
+                         +
+                        '                                <div class="talk-modal-box" style="display: none;">\n' +
+                        '                                    <div class="talk-modal">\n' +
+                        '                                        <div class="clearFix">\n' +
+                        '                                            <a href="javascript:void(0);" class="remind-dx" data-dx="'+list.uid+'">\n' +
+                        '                                                <img src="dist/images/friend-m-dx_03.jpg" alt="">\n' +
+                        '                                                <p>短信提醒</p>\n' +
+                        '                                            </a>\n' +
+                        '                                            <span></span>\n' +
+                        '                                            <a href="friend://wx='+ list.uid +'" class="remind-wx">\n' +
+                        '                                                <img src="dist/images/friend-m-wx_03.jpg" alt="">\n' +
+                        '                                                <p>微信提醒</p>\n' +
+                        '                                            </a>\n' +
+                        '                                        </div>\n' +
+                        '                                    </div>\n' +
+                        '                                </div>\n' +
+                        '                            </td>\n' +
+                        '                        </tr>';
+                    $('#romanceAwaken').append(awaken);
+                })
+                $('.option-prompt').on('click', function () {
+                    $(this).next().show();
+                    $('.modal-close').show();
+                    // $(this).unbind('click');
+                    trNum = $(this).parents('tr').index();
+                });
+                $('.remind-dx').on('click', function () {
+                    var dx = $(this).attr('data-dx');
+                    $.ajax({
+                        url: ctxs + '/act/h5/wakeFriendStatus?tel_num='+ getString.tel_num,
+                        type: 'GET',
+                        dataType:'jsonp',
+                        jsonp:'callback',
+                        jsonpCallback: 'send',
+                        success: function(data){
+                            console.log(data);
+                            if(data.status == 0){
+                                goldCoin(dx,'限时免费', '，活动期间'+'<span style="color: #fe233e;">免费</span>'+'发短信', '免费短信唤醒好友');
+                            }else if(data.status == 1){
+                                goldCoin(dx,'唤醒好友得金币','','花费400金币发短信');
+                            }else if(data.status == 202){
+                                toast('请勿重复操作');
+                            }else{
+                                toast(data.status);
+                            }
+                        },
+                        error: function(err){
+                            console.log(err);
+                        }
+                    });
+
+                })
+                //扣除四百金币
+                function goldCoin(dx, title, add, btn){
+                    window.createModal.showCustom(title,'0.36rem','<span style="color: #9a9a9a;font-size: 0.3rem;display: block;width: 4.78rem;text-align: left;margin: 0 auto 0.2rem;">花400金币唤醒好友（系统代发短信）\n' +
+                        '好友重新使用花生头条并签到一次，\n' +
+                        '您将获得'+'<span style="color: #fe233e;">3000金币</span>'+'奖励'+ add +'。</span>', '','<span style="font-size: 0.44rem;">'+btn+'</span>',function(){
+                        // 短信唤起
+                        $.ajax({
+                            url: ctxs + '/act/h5/wakeFriend?tel_num='+ getString.tel_num +'&friendUid='+ dx +'&type=1',
+                            type: 'GET',
+                            dataType: 'jsonp',
+                            jsonp: 'callback',
+                            jsonpCallback: 'wake',
+                            success:function(data){
+                                if(data.status == 0){
+                                    toast('短信发送成功');
+                                    // 唤醒置灰
+                                    $('.trNum').eq(trNum).find('.option-prompt').addClass('option-prompt-style').text('已提醒').unbind('click');
+                                }else{
+                                    toast(data.msg);
+                                };
+                            },
+                            error: function(err){
+                                consoloe.log(err);
+                            }
+                        });
+                        $('.modal-close').hide();
+                        $('.talk-modal-box').hide();
+                    });
+                }
+                $('.remind-wx').on('click', function () {
+                    var $that = $(this);
+                    $('.modal-close').hide();
+                    $('.talk-modal-box').hide();
+                    setTimeout(function(){
+                        $that.parents('.talk-modal-box').prev().addClass('option-prompt-style').text('已提醒').unbind('click');
+                    },5000)
+
+                })
+            }
+            function friendList(me, type, num){
+                /*
+                * type 类型
+                * num 页数
+                * */
+                $.ajax({
+                    url: ctxs + '/act/h5/friendList?tel_num='+getString.tel_num+'&isActive='+type+'&page='+ num,
+                    type: 'GET',
+                    dataType: 'jsonp',
+                    jsonp: 'callback',
+                    jsonpCallback: 'friendList',
+                    success: function(data){
+                        console.log(data)
+                        if(data.status == 0){
+                            $('#allGold').text(data.response.allGold);
+                            $('#friendCount').text(data.response.friendCount);
+                            $('#todayGold').text(data.response.todayGold);
+                            if(data.response.list.length>0){
+                                if(type == 1){
+                                    $('#info-active').hide();
+                                    $('.info-active').show();
+                                    romanceActive(data.response.list);
+
+                                }else if(type == 2){
+                                    $('#info-awaken').hide();
+                                    $('.info-awaken').show();
+                                    romanceAwaken(data.response.list);
+                                }
+                                if(me !== ''){
+                                    me.resetload();
+                                }
+                            }else{
+                                if(me !== ''){
+                                    me.noData(true);
+                                    me.resetload();
+                                }
+                            }
+                        }else{
+                            if(me !== ''){
+                                me.resetload();
+                            }
+                        }
+                    },
+                    error:function (err) {
+                        if(me !== ''){
+                            me.resetload();
+                        }
+                    }
+                })
+            }
+            friendList("", 1, scrollNum);
+            var dropload = $('.friend-container').dropload({
+                scrollArea: window,
+                distance: 30,
+                autoLoad: false,
+                domDown: {
+                    domClass: 'dropload-down',
+                    domRefresh:  '<div class="dropload-load" style="display: none;"><span class="loading"></span></div>',
+                    domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
+                    domNoData: '<div class="dropload-noData">暂无数据</div>'
+                },
+                scrollRange: function(me) {
+                },
+                loadDownFn: function (me) {
+                    scrollNum++;
+                    friendList(me, typeNum, scrollNum);
+                },
+            });
+            //分享模态
+            $('.invitation-friend').on('click', function () {
+                $('.invitation-shortcut-share').show();
+            })
+            // 快捷分享
+            $('.invitation-shortcut-share').on('click', function () {
+                $(this).hide();
+            })
+        })
+    </script>
+</body>
+</html>

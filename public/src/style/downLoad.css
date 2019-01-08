@@ -1,0 +1,89 @@
+html,body{
+    height: 100%;
+}
+.download-page{
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+.download-page img{
+    display: block;
+}
+.download-page-tittle{
+    margin: 37px auto 0;
+    width: 2.24rem;
+    height: 2.24rem;
+}
+.download-page-one{
+    margin: 12px auto 18px;
+    width: 2.7rem;
+}
+.download-page-two{
+    margin: 0 auto 10px;
+    width: 5.1rem;
+}
+.download-page-img{
+    margin: 0 auto;
+    width: 100%;
+}
+.download-page-url{
+    width:4rem;
+    margin: 10px auto 12px;
+}
+.download-page-div{
+    width: 100%;
+    height: 30px;
+    background-color: rgba(213, 68, 39, 0);
+}
+@media (-webkit-min-device-pixel-ratio:2),(min-device-pixel-ratio:2){
+    .download-page-div{
+        display: none;
+    }
+}
+@media (-webkit-min-device-pixel-ratio:1),(min-device-pixel-ratio:1){
+    .download-page-div{
+        display: block;
+    }
+}
+.option-dowm-box{
+    width: 0.55rem;
+    height: 35px;
+    position: relative;
+    margin: 0 auto;
+}
+.option-dowm{
+    width: 0.55rem;
+    height: 35px;
+    position: absolute;
+    left: auto;
+    right: auto;
+    display: block;
+    animation: myfirst 0.5s linear 1s infinite alternate;
+    -moz-animation: myfirst 0.5s linear 1s infinite alternate;
+    -webkit-animation: myfirst 0.5s linear 1s infinite alternate;
+    -o-animation: myfirst 0.5s linear 1s infinite alternate;
+}
+@keyframes myfirst
+{
+    0%   {top: -2px;}
+    50%  {top: 0;}
+    100% {top: 2px;}
+}
+@-moz-keyframes myfirst
+{
+    0%   {top: -2px;}
+    50%  {top: 0;}
+    100% {top: 2px;}
+}
+@-webkit-keyframes myfirst
+{
+    0%   {top: -2px;}
+    50%  {top: 0;}
+    100% {top: 2px;}
+}
+@-o-keyframes myfirst
+{
+    0%   {top: -2px;}
+    50%  {top: 0;}
+    100% {top: 2px;}
+}

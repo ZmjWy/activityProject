@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <script type=text/javascript src='dist/script/fontsizeset.js'></script>
+    <script type=text/javascript src='dist/script/zepto.js'></script>
+    <script type=text/javascript src='dist/script/common.js'></script>
+    <link rel="stylesheet" href="dist/style/reset.css">
+    <link rel="stylesheet" href="dist/style/style.css">
+    <title>扫码入群</title>
+</head>
+<body>
+    <div class="csan container">
+        <p>小花生已恭候多时</p>
+        <p>加入微信群 赚钱更轻松</p>
+        <div>
+            <img src="dist/images/scan-border_03.png" alt="">
+            <div>
+                <div>
+                    <img id="all_code" src="" alt="">
+                </div>
+            </div>
+        </div>
+        <p>长按识别二维码进群</p>
+        <div>
+            <img src="dist/images/scan-option_04.png" alt="">
+        </div>
+    </div>
+    <script>
+        $(function(){
+            function getAllCode() {
+                $.ajax({
+                    url: ctxs + '/index/getUserQRcode',
+                    type: 'GET',
+                    dataType: 'jsonp',
+                    jsonp: 'callback',
+                    jsonpCallback: 'codeBack',
+                    success: function(data){
+                        if(data.status == 100){
+                            $('#all_code').attr('src', data.qrcode);
+                        }else {
+                            $('#all_code').attr('alt', '花生二维码');
+                        }
+                    }
+                })
+            };
+            getAllCode();
+        })
+    </script>
+</body>
+</html>

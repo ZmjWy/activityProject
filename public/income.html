@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="screen-orientation"content="portrait">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>预期收入</title>
+    <script type=text/javascript src='dist/script/fontsizeset.js'></script>
+    <script type=text/javascript src='dist/script/jquery.js'></script>
+    <script type=text/javascript src='dist/script/common.js'></script>
+    <link rel="stylesheet" href="dist/style/reset.css">
+    <link rel="stylesheet" href="dist/style/style.css">
+</head>
+<body>
+    <div class="income container">
+        <div id="chartBox" style="width: 6.9rem;height: 5.75rem;margin: 0 auto;">
+            <canvas id="chartArc"></canvas>
+        </div>
+        <div class="income-line"></div>
+        <div class="income-content">
+            <h3>预期收入包括</h3>
+            <ul>
+                <li class="clearFix" id="list-none" style="display: none;">
+                    <img src="dist/images/income-item-1_03.jpg" alt="">
+                    <div>
+                        <div class="clearFix">
+                            <span>好友贡献</span>
+                            <div>
+                                <img src="dist/images/income-award-img-all_03.png" alt="">
+                                <span class="friendGold"></span>
+                            </div>
+                        </div>
+                        <p>
+                            好友每次阅读奖励，您可提成30%，好友越多越活跃，提成越多。 <a href="income://awaken">去唤醒 <img src="dist/images/income-reward-right_03.jpg" alt=""></a>
+                        </p>
+                    </div>
+                </li>
+                <li class="clearFix">
+                    <img src="dist/images/income-item-2_03.jpg" alt="">
+                    <div>
+                        <div class="clearFix">
+                            <span>签到</span>
+                            <div>
+                                <img src="dist/images/income-award-img-all_03.png" alt="">
+                                <span class="signGold"></span>
+                            </div>
+                        </div>
+                        <p>
+                            明日签到白送<span class="signGold">0金币</span>，连续签到更多金币等
+                            你拿。<a href="income://register">去签到 <img src="dist/images/income-reward-right_03.jpg" alt=""></a>
+                        </p>
+                    </div>
+                </li>
+                <li class="clearFix">
+                    <img src="dist/images/income-item-3_03.jpg" alt="">
+                    <div>
+                        <div class="clearFix">
+                            <span>阅读</span>
+                            <div>
+                                <img src="dist/images/income-award-img-all_03.png" alt="">
+                                <span class="readGold"></span>
+                            </div>
+                        </div>
+                        <p>
+                            阅读感兴趣的新闻，观看有趣的视频，每满30
+                            秒即送金币，看的越多，送的越多。<a href="income://ready">去阅读 <img src="dist/images/income-reward-right_03.jpg" alt=""></a>
+                        </p>
+                    </div>
+                </li>
+                <li class="clearFix">
+                    <img src="dist/images/income-item-4_03.jpg" alt="">
+                    <div>
+                        <div class="clearFix">
+                            <span>小宝藏</span>
+                            <div>
+                                <img src="dist/images/income-award-img-all_03.png" alt="">
+                                <span class="treasureGold"></span>
+                            </div>
+                        </div>
+                        <p>
+                            阅读每满3篇可领小宝藏，阅读越多宝藏越多，
+                            马上去挖宝吧。 <a href="income://treasure">去挖宝 <img src="dist/images/income-reward-right_03.jpg" alt=""></a>
+                        </p>
+                    </div>
+                </li>
+                <li class="clearFix">
+                    <img src="dist/images/income-item-5_03.jpg" alt="">
+                    <div>
+                        <div class="clearFix">
+                            <span>分享</span>
+                            <div>
+                                <img src="dist/images/income-award-img-all_03.png" alt="">
+                                <span class="shareGold"></span>
+                            </div>
+                        </div>
+                        <p>
+                            将喜欢的文章分享给好友，邀请好友阅读，即
+                            可领取金币。 <a href="income://share">去分享 <img src="dist/images/income-reward-right_03.jpg" alt=""></a>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="dist/script/income.js"></script>
+    <script>
+        $(function () {
+            // goChart([[1,"#2e78d7","分享"], [1,"#2196f3", "阅读收入"], [1,"#e9b61f","小宝藏"], [10,"#ea3e10","好友贡献"], [300000,"#00b904","签到"]]);
+            var getString = new GetQueryString();
+            $.ajax({
+                url: ctxs + '/act/h5/tomorrowEstimateGold?tel_num='+ getString.tel_num,
+                type: 'GET',
+                dataType: 'jsonp',
+                jsonp: 'callback',
+                jsonpCallback: 'callback',
+                success: function (data) {
+                    if(data.status == 0){
+                        if(data.response.friendCount > 0){
+                            $('#list-none').show();
+                        }
+                        var msg = JSON.parse(data.msg);
+                        $('.shareGold').html(msg.shareGold + "金币");
+                        $('.readGold').html(msg.readGold + "金币");
+                        $('.treasureGold').html(msg.treasureGold + "金币");
+                        $('.friendGold').html(msg.friendGold + "金币");
+                        $('.signGold').html(msg.signGold + "金币");
+                        var chartData = [[msg.shareGold,"#2e78d7","分享"], [msg.readGold,"#2196f3", "阅读收入"], [msg.friendGold,"#ea3e10","好友贡献"], [msg.treasureGold,"#e9b61f","小宝藏"], [msg.signGold,"#00b904","签到"]];
+                        for(var i=0; i<chartData.length; i++){
+                            if(chartData[i][0] == 0){
+                                chartData.splice(i,1)
+                            }
+                        }
+                        goChart(chartData);
+                    };
+                },
+                error: function(error){
+
+                }
+            });
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>限时红包</title>
+    <script type=text/javascript src='dist/script/fontsizeset.js'></script>
+    <script type=text/javascript src='dist/script/jquery.js'></script>
+    <script type=text/javascript src='dist/script/common.js'></script>
+    <link rel="stylesheet" href="dist/style/reset.css">
+    <link rel="stylesheet" href="dist/style/style.css">
+    <link rel="stylesheet" href="dist/style/swiper.css">
+    <style>
+        .swiper-container-3d .swiper-slide-shadow-bottom, .swiper-container-3d .swiper-slide-shadow-left, .swiper-container-3d .swiper-slide-shadow-right, .swiper-container-3d .swiper-slide-shadow-top{
+            border-radius: 0.2rem;
+        }
+        .swiper-container-3d .swiper-slide-shadow-left {
+            background-image: -webkit-gradient(linear,right top,left top,from(rgba(247, 247, 247, 0.5)),to(rgba(247, 247, 247, 0.5)));
+            background-image: -webkit-linear-gradient(right,rgba(247, 247, 247, 0.5),rgba(247, 247, 247, 0.5));
+            background-image: -o-linear-gradient(right,rgba(247, 247, 247, 0.5),rgba(247, 247, 247, 0.5));
+            background-image: linear-gradient(to left,rgba(247, 247, 247, 0.5),rgba(247, 247, 247, 0.5));
+        }
+        .swiper-container-3d .swiper-slide-shadow-right {
+            background-image: -webkit-gradient(linear,left top,right top,from(rgba(247, 247, 247, 0.5)),to(rgba(247, 247, 247, 0.5)));
+            background-image: -webkit-linear-gradient(left,rgba(247, 247, 247, 0.5),rgba(247, 247, 247, 0.5));
+            background-image: -o-linear-gradient(left,rgba(247, 247, 247, 0.5),rgba(247, 247, 247, 0.5));
+            background-image: linear-gradient(to right,rgba(247, 247, 247, 0.5),rgba(247, 247, 247, 0.5));
+        }
+        .swiper-button-prev.swiper-button-change, .swiper-container-rtl .swiper-button-next.swiper-button-change {
+            background-image: url('dist/images/red-paper-prev_11.png');
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="red-paper container">
+        <div class="red-paper-banner">
+            <img src="dist/images/red-paper-banner_02.jpg" alt="">
+            <img id="scroll-rule" src="dist/images/red-paper-rule_03.png" alt="">
+        </div>
+        <div class="red-paper-content">
+            <div class="activity-record">
+                <img src="dist/images/red-paper-line_11.png" alt="">
+                <div class="activity-record-content">
+                    <h3 class="tittle-all">
+                        <img src="dist/images/red-paper-left_18.png" alt="">
+                        <span>活动期间</span>
+                        <img src="dist/images/red-paper-right_20.png" alt="">
+                    </h3>
+                    <ul class="clearFix">
+                        <li>
+                            <p id="friend-num"></p>
+                            <p>
+                                邀请好友<br/>（人）
+                            </p>
+                            <span></span>
+                        </li>
+                        <li>
+                            <p id="friend-money"></p>
+                            <p>
+                                已提现好友<br/>（人）
+                            </p>
+                            <span></span>
+                        </li>
+                        <li>
+                            <p id="red-money"></p>
+                            <p>
+                                已领红包
+                                <br/>（元）
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="red-paper-swiper">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img class="option-red-null" data-num="1" src="dist/images/red-style-1.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="option-red-null" data-num="2" src="dist/images/red-style-5.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="option-red-null" data-num="3" src="dist/images/red-style-10.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="option-red-null" data-num="4" src="dist/images/red-style-50.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="option-red-null" data-num="5" src="dist/images/red-style-100.png" alt="">
+                        </div>
+                    </div>
+                    <div style="left: 0.42rem;" class="swiper-button-prev swiper-button-change"></div>
+                </div>
+            </div>
+            <div class="set-time-show" style="display: none;">
+                <div class="receive" style="height: 7.15rem;">
+                    <img src="dist/images/red-paper-line_11.png" alt="">
+                    <div class="receive-content rule" style="height: 7.15rem;padding: .8rem 0 0;">
+                        <h3 class="tittle-all">
+                            <img src="dist/images/red-paper-left_18.png" alt="">
+                            <span>活动规则</span>
+                            <img src="dist/images/red-paper-right_20.png" alt="">
+                        </h3>
+                        <ul>
+                            <li>
+                                <div class="rule-tittle clearFix">
+                                    <span></span>
+                                    <span>奖励规则</span>
+                                </div>
+                                <div class="rule-text">
+                                    <p>
+                                        成功邀请1位好友，获<span>2.88~15.88</span>红包
+                                    </p>
+                                    <p>
+                                        成功邀请5位好友，获<span>8.88~28.88元</span>红包
+                                    </p>
+                                    <p>
+                                        成功邀请10位好友，获<span>18.88~38.88元</span>红包
+                                    </p>
+                                    <p>
+                                        成功邀请30位好友，获<span>28.88~88.88元</span>红包
+                                    </p>
+                                    <p>
+                                        成功邀请50位好友，获<span>48.88元</span>起，无上限
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rule-tittle clearFix">
+                                    <span></span>
+                                    <span>成功邀请的规则</span>
+                                </div>
+                                <div class="rule-text">
+                                    <p>
+                                        活动期间邀请好友，好友首次下载注册且
+                                        提现成功，您可获得拆红包机会。
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="course-btn">
+            <button class="course-commit" type="button">立即邀请好友 赢<span style="color: #fedf0a;">无限</span>红包</button>
+        </div>
+    </div>
+    <script src="dist/script/swiper.js"></script>
+    <script>
+        $(function () {
+            var getString = new GetQueryString();
+            var receive = true;
+            // 页面数据接口
+            function pageData(){
+                $.ajax({
+                    url:ctxs + '/act/h5/limitTimeRedMoneyDetail?tel_num='+ getString.tel_num,
+                    type:'GET',
+                    dataType: 'jsonp',
+                    jsonp: 'callback',
+                    jsonpCallback: 'course',
+                    success:function (data) {
+                        console.log(data)
+                        if(data.status == 0){
+                            $('#friend-num').text(data.response.numberOfFriend);
+                            $('#friend-money').text(data.response.numberOfCashFriend);
+                            $('#red-money').text(data.response.redPocketMoney);
+                            // 阅读次数
+//                            var readNum = Number(data.response.readGold) / 30;
+//                            readNum <= 3? $('#read-num').text('('+ readNum + '/3)'):$('#read-num').text('(3/3)');
+//                            if(readNum >= 3){
+//                                $('#read-done').attr('src','dist/images/red-paper-done_07.jpg');
+//                            };
+                            //搜索次数
+//                            if(data.response.searchGold > 0){
+//                                $('#search-num').text('(1/1)');
+//                                $('#search-done').attr('src','dist/images/red-paper-done_07.jpg');
+//                            }
+                            //判断领取条件
+//                            if(readNum >= 3 && data.response.searchGold > 0){
+//                                receive = true;
+//                            }
+                            // 显示可以领取红包
+                            if(data.response.numberOfFriend >=1 && data.response.numberOfCashFriend >=1){
+                                data.response.order1 == 0?$('.swiper-slide').eq(0).children('img').attr({src:'dist/images/red-get-1.png',class:'option-red-get'}): $('.swiper-slide').eq(0).children('img').attr({src:'dist/images/red-done-1.png',class:'option-red-done'});
+                                if(data.response.numberOfFriend >=5 && data.response.numberOfCashFriend >=5){
+                                    data.response.order2 == 0?$('.swiper-slide').eq(1).children('img').attr({src:'dist/images/red-get-5.png',class:'option-red-get'}): $('.swiper-slide').eq(1).children('img').attr({src:'dist/images/red-done-5.png',class:'option-red-done'});
+                                    if(data.response.numberOfFriend >=10 && data.response.numberOfCashFriend >=10){
+                                        data.response.order3 == 0?$('.swiper-slide').eq(2).children('img').attr({src:'dist/images/red-get-10.png',class:'option-red-get'}): $('.swiper-slide').eq(2).children('img').attr({src:'dist/images/red-done-10.png',class:'option-red-done'});
+                                        if(data.response.numberOfFriend >=30 && data.response.numberOfCashFriend >=30){
+                                            data.response.order4 == 0?$('.swiper-slide').eq(3).children('img').attr({src:'dist/images/red-get-50.png',class:'option-red-get'}): $('.swiper-slide').eq(3).children('img').attr({src:'dist/images/red-done-50.png',class:'option-red-done'});
+                                            if(data.response.numberOfFriend >=50 && data.response.numberOfCashFriend >=50){
+                                                data.response.order5 == 0?$('.swiper-slide').eq(4).children('img').attr({src:'dist/images/red-get-100.png',class:'option-red-get'}): $('.swiper-slide').eq(4).children('img').attr({src:'dist/images/red-done-100.png',class:'option-red-done'});
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    error:function (error) {
+                        console.log(error);
+                    }
+                })
+            };
+            pageData();
+            function redMoney(order){
+                $.ajax({
+                    url:ctxs + '/act/h5/limitTimeRedMoney?tel_num='+getString.tel_num+'&order='+ order,
+                    type:'GET',
+                    dataType: 'jsonp',
+                    jsonp: 'callback',
+                    jsonpCallback: 'redMoney',
+                    success:function(data){
+                        console.log(data)
+                        if(data.status == 0){
+                            var content = '<img src="dist/images/red-get-title_03.jpg" style="width: 1.25rem;height: 1.25rem;" alt=""/>' +
+                                '<span style="font-size: 0.88rem;color: #d5001a;">'+ data.gold+'</span>' +
+                                '<span  style="font-size: 0.48rem;color: #d5001a;">元</span>';
+                            window.createModal.showCustom('恭喜获得现金红包','0.46rem',content ,'redPaper://share','晒一晒');
+                            pageData();
+                        }else{
+                            toast(data.msg);
+                        }
+                    },
+                    error:function(err){
+
+                    }
+                });
+            }
+            // 点击领取红包
+            $('.swiper-slide').on('click', function(){
+                var ind = $(this).index();
+                var sta = $(this).children('img').attr('class');
+                if(sta == 'option-red-done'){
+                    toast('红包已领取');
+                }else if(sta == 'option-red-null'){
+                    toast('领取条件未达成');
+                }else if(sta == 'option-red-get') {
+                    optionRed(ind + 1);
+                }
+            })
+            function optionRed(num){
+                if(receive){
+                    redMoney(num);
+                }else{
+                    toast('领取条件未达成');
+                }
+            }
+            var swiper = new Swiper('.swiper-container', {
+                effect: 'coverflow',
+                grabCursor: true,
+                parallax : true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 200,
+                    modifier: 1,
+                    slideShadows : true,
+                },
+            });
+            $('#scroll-rule').on('click', function () {
+                var scroll = $('.receive').offset().top;
+                $('html, body').animate({scrollTop: (scroll+'px')}, 800);
+            })
+            $('.set-time-show').show();
+            // 唤起邀请好友
+            $('.course-btn').on('click', function () {
+                shortcut();
+            })
+        })
+    </script>
+</body>
+</html>
