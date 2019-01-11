@@ -3,7 +3,7 @@
     border: 0;
 }
 .banner{
-    background-image: url("../images/invitefriends-banner.jpg");
+    background-image: url(../images/invitefriends-banner.jpg);
     background-size: 7.5rem 6.35rem;
     width: 100%;
     background-repeat: no-repeat;
@@ -133,7 +133,7 @@
     background-color: #fe5e00;
 }
 .content{
-    background: url("../images/invitefriends-main.jpg") no-repeat scroll top center/100%;
+    background: url(../images/invitefriends-main.jpg) no-repeat scroll top center/100%;
     width: 7.1rem;
     height: 12.36rem;
     margin: 0 auto;

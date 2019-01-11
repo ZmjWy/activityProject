@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main-rule{
+    background:url(../images/invitationRules-banner.jpg);
+    width: 100%;
+    background-size: 7.5rem 4.87rem;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    color:#ffecec;
+}
+.mainTitle{
+    text-align: center;
+    font-size: .46rem;
+    line-height: .7rem;
+}
+.rlue-clause{
+    font-size: .32rem;
+   margin: .1rem 5%;
+}
+.rlue-clause p{
+    display: inline-block;
+}
+.rlue-clause-sernum{
+   float: left;
+}
+.rlue-clause-content{
+    width: 90%;
+}
+.main{
+    background-color: #fe5e00;
+    padding-top: .1rem;
+    padding-bottom: .34rem;
+}
+.specific-rewards{
+    width: 6.9rem;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius:8px;
+    overflow: hidden;
+}
+.module{
+    width: 6.5rem;
+    margin:0 auto;
+}
+.module-title{
+    display: block;
+    margin: .42rem auto .25rem auto;
+    font-size: .32rem;
+    line-height: .58rem;
+}
+.module-title p{
+    text-align: center;
+}
+.module-main{
+    width: 6.5rem;
+    margin: 0 auto;
+    padding: .19rem 0;
+    background-color: #ffe2d1;
+    border-radius: .05rem;
+}
+.module-main div:nth-of-type(2){
+    border-left: 1px solid #efc9b2;
+    border-right: 1px solid #efc9b2;
+}
+.module-main div:nth-of-type(4){
+    border-left: 1px solid #efc9b2;
+    border-right: 1px solid #efc9b2;
+}
+.unit{
+    float: left;
+    width: 1.28rem;
+    margin: 0 auto;
+}
+.day{
+    font-size: .2rem;
+    color: #fe5e00;
+    text-align: center;
+}
+.money{
+    font-size: .36rem;
+    color: #f93707;
+    font-weight: bold;
+    text-align: center;
+}
+.statement{
+    width:6.1rem;
+    margin: .42rem auto;
+}
+.statement p:nth-of-type(1){
+    font-size: .38rem;
+    line-height: .68rem;
+    font-weight: bold;
+    text-align: center;
+}
+.statement p:nth-of-type(2){
+    font-size: .32rem;
+    line-height: .54rem;
+    text-align: left;
+}
