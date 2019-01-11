@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    border: 0;
+}
+.banner{
+    background-image: url("../images/invitefriends-banner.jpg");
+    background-size: 7.5rem 6.35rem;
+    width: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.rules{
+    float: right;
+    width: 1.8rem;
+    height: .68rem;
+    margin-left: 5.7rem;
+    background-color: #f4c388;
+    border-top-left-radius:.34rem;
+    border-bottom-left-radius:.34rem;
+    color: #ce0508;
+    font-size:.3rem ;
+    text-align: center;
+    line-height: .68rem;
+    overflow: hidden;
+}
+.rules img{
+    width: .12rem;
+    height: .18rem;
+}
+.slogan{
+    width: 4.6rem;
+    height: .54rem;
+    border-radius: .28rem;
+    margin: 2.1rem auto .24rem auto;
+    background: linear-gradient(#fff, #fecfca);
+    font-size: .28rem;
+    font-weight: bold;
+    color: #ce0610;
+    text-align: center;
+    line-height: .54rem;
+    overflow: hidden;
+}
+.record{
+    width: 7rem;
+    height: 1.6rem;
+    margin: 0 auto .16rem auto;
+    padding: .27rem .05rem;
+    border-radius: .8rem;
+    border: 3px solid #fef17e;
+    background: linear-gradient(#ff605f,#ff0d0d);
+    overflow: hidden;
+}
+.record div:nth-of-type(2){
+    border-left: 2px solid #fea363;
+    border-right: 2px solid #fea363;
+}
+.unit{
+    float: left;
+    width: 2.2rem;
+    height: 1rem;
+    text-align: center;
+}
+.unit p:nth-of-type(1){
+    font-size: .28rem;
+    color: #fff;
+}
+.unit p:nth-of-type(2){
+     font-size: .48rem;
+     color: #fef17e;
+ }
+.unit p:nth-of-type(2) span{
+    font-size: .28rem;
+}
+.copy{
+    width: .68rem;
+    height: .26rem;
+    margin-left: 5.25rem;
+    background-color: #ffdb01;
+    border-top-right-radius: .13rem;
+    border-top-left-radius: .13rem;
+    border-bottom-right-radius: .13rem;
+    font-size: .16rem;
+    color: #e10a08;
+    text-align: center;
+    line-height: .26rem;
+}
+.code{
+    text-align: center;
+    color: #fff;
+    font-size: .28rem;
+    line-height: .28rem;
+}
+.code span{
+    text-decoration: underline;
+}
+.invitecode{
+    margin-bottom: .26rem;
+}
+.tab{
+    width: 6.88rem;
+    margin: 0 auto;
+}
+.tab div{
+    float: left;
+}
+.tab div:nth-of-type(1){
+    width: 2.44rem;
+    height: .9rem;
+    font-size: .32rem;
+    font-weight: bold;
+    line-height: .9rem;
+    color: #e10a08;
+    text-align: center;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    background:linear-gradient(#ffe35c,#ffbd14);
+}
+.tab div:nth-child(n+2){
+    margin-left: 1px;
+    width:2.194rem;
+    height: .8rem;
+    font-size: .28rem;
+    line-height: .8rem;
+    color: #bf5e09;
+    text-align: center;
+    background-color: #ff950b;
+    margin-top: .1rem;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.main{
+    width: 100%;
+    background-color: #fe5e00;
+}
+.content{
+    background: url("../images/invitefriends-main.jpg") no-repeat scroll top center/100%;
+    width: 7.1rem;
+    height: 12.36rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.reward{
+    margin-top: .33rem;
+    margin-left: .44rem;
+}
+.reward img{
+    width: .24rem;
+    height: .3rem;
+    display: inline-block;
+}
+.reward p{
+    display: inline-block;
+    font-size: .28rem;
+    line-height: .3rem;
+    color: #f95821;
+}
+.howinvite-title{
+    width: 2.8rem;
+    height: .54rem;
+    margin: .62rem  auto .16rem auto;
+    border-radius: .28rem;
+    background-color: #ffdc9c;
+    color: #fe5e00;
+    font-size: .36rem;
+    text-align: center;
+}
+.explain{
+    text-align: center;
+    font-size: .28rem;
+    color: #fee0ce;
+}
+.floor{
+    margin-top: .45rem;
+    width: 7.5rem;
+    padding-bottom: .56rem;
+}
+.floor-flow{
+    width: 5.1rem;
+    margin: 0 auto;
+}
+.liucheng{
+    width: .57rem;
+    height: .67rem;
+}
+.flow{
+    vertical-align: text-top;
+    margin: 0 0.285rem;
+    width: .9rem;
+    height: .2rem;
+}
+.floor-flow-text{
+    width: 100%;
+}
+.floor-flow-text p{
+    width: 33%;
+    float: left;
+    text-align: center;
+    color: #fff;
+    font-size: 0.26rem;
+}
+.floor-flow-text p:nth-child(1){
+    padding-left: 0.32rem;
+}
+.floor-flow-text p:nth-child(2){
+    padding-right: 0.15rem;
+}
+.floor-flow-text p:nth-child(3){
+    padding-right: 0.6rem;
+}
