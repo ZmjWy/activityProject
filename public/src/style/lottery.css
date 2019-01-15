@@ -1,7 +1,3 @@
-*{
-    margin: 0;
-    border:0;
-}
 html{
     width: 100%;
     height:100%;
@@ -12,7 +8,7 @@ body{
     background-color: #fff3f3;
 }
 .banner{
-    background: url(../images/lottery-lottery.jpg);
+    background: url(../images/lottery-lottery.jpg) no-repeat top center/100%;
     background-size: 7.5rem 9.28rem;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -28,22 +24,50 @@ body{
 .tips span{
     color: #fffc00;
 }
+.area-relative{
+    position: relative;
+}
 .scratch-area{
     width: 7rem;
     height: 3.36rem;
     margin: 0 auto;
     border: .22rem solid #d146f4;
     border-radius: 8px;
-    background: url("../images/lottery-scratch-area.jpg") center  ;
-    background-size: 6.56rem 2.92rem;
-    background-repeat: no-repeat;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scratch-area-child{
+    width: 6.56rem;
+    height: 2.92rem;
+    background: url("../images/lottery-scratch-area.jpg") no-repeat top center/100%;
     font-size: .42rem;
     text-align: center;
     line-height: 2.9rem;
     color: #ad3dff;
     font-weight: bold;
     margin-bottom: .72rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.scratch-area-style{
+    background: url("../images/lottery-scratch-area-1_03.jpg") no-repeat top center/100%;
+}
+#scratch-area{
+    width: 6.56rem;
+    height: 2.92rem;
+}
+.show-lottery{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6.56rem;
+    height: 2.92rem;
+    z-index: 99;
+    display: block;
 }
 .attention{
     padding-top: .2rem;

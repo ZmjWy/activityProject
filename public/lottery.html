@@ -11,19 +11,28 @@
     <meta name="screen-orientation"content="portrait">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <title>幸运抽奖</title>
+    <title>幸运刮奖</title>
     <script type=text/javascript src='dist/script/fontsizeset.js'></script>
     <script type=text/javascript src='dist/script/jquery.js'></script>
     <script type=text/javascript src='dist/script/common.js'></script>
     <link rel="stylesheet" href="dist/style/reset.css">
     <link rel="stylesheet" href="dist/style/style.css">
     <link rel="stylesheet" href="dist/style/lottery.css">
+    <script type=text/javascript src='dist/script/lottery.js'></script>
 </head>
 <body>
 <div class="container">
     <div class="banner">
-        <div class="tips">您还有 <span>1</span> 次刮奖机会</div>
-        <div class="scratch-area">刮奖赢现金</div>
+        <div class="tips">您还有 <span id="degree">1</span> 次刮奖机会</div>
+        <div class="scratch-area area-relative">
+            <div class="scratch-area-child">
+                刮奖赢现金
+            </div>
+            <div id="scratch-area">
+                <canvas id="lottery-canvas"></canvas>
+            </div>
+            <img class="show-lottery" src="dist/images/lottery-scratch-area-1_03.jpg" alt="" style="display: none;">
+        </div>
     </div>
     <div class="attention">
         <p>注意事项</p>

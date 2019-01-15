@@ -1,22 +1,19 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 .main-rule{
-    background:url(../images/invitationRules-banner.jpg);
-    background-size: 7.5rem 4.87rem;
-    background-repeat: no-repeat;
+    padding-top: 0.6rem;
+    width: 100%;
+    height: 5.06rem;
+    background:url(../images/invitationRules-banner.jpg) no-repeat top center/100% 100%;
     overflow: hidden;
     color:#ffecec;
 }
 .mainTitle{
     text-align: center;
     font-size: .46rem;
-    line-height: .7rem;
+    line-height: 1;
+    margin-bottom: 0.3rem;
 }
 .rlue-clause{
     font-size: .32rem;
-    /*padding: .1rem 5%;*/
 }
 .rlue-clause p{
     display: inline-block;

@@ -15,8 +15,10 @@
     <script type=text/javascript src='dist/script/fontsizeset.js'></script>
     <script type=text/javascript src='dist/script/jquery.js'></script>
     <script type=text/javascript src='dist/script/common.js'></script>
+    <script type=text/javascript src='dist/script/inviteFrinds.js'></script>
     <link rel="stylesheet" href="dist/style/reset.css">
     <link rel="stylesheet" href="dist/style/inviteFriends.css">
+    <link rel="stylesheet" href="dist/style/shareAll.css">
 </head>
 <body>
     <div  class="container">
@@ -26,22 +28,22 @@
             <div class="record">
                 <div class="unit">
                     <p>已邀请好友</p>
-                    <p>100<span>位</span></p>
+                    <p><span style="font-size: .48rem;" id="inviteF">0</span><span>位</span></p>
                 </div>
                 <div class="unit">
                     <p>有效好友</p>
-                    <p>100<span>位</span></p>
+                    <p><span style="font-size: .48rem;" id="validF">0</span><span>位</span></p>
                 </div>
                 <div class="unit">
                     <p>累计收益</p>
-                    <p>100<span>元</span></p>
+                    <p><span style="font-size: .48rem;" id="income">0</span><span>元</span></p>
                 </div>
             </div>
             <div class="invitecode">
-                <div class="copy">复制</div>
-                <p class="code">我的邀请码：<span>88888888</span></p>
+                <div class="copy"><img src="dist/images/copy-invite_03.jpg" alt=""></div>
+                <p class="code">我的邀请码：<span id="invate_code"></span></p>
             </div>
-            <div class="tab">
+            <div class="tab clearFix">
                 <div>邀请好友</div>
                 <div>好友列表</div>
                 <div>唤醒好友</div>
@@ -53,12 +55,59 @@
                     <img src="dist/images/invitefriends-jiangli.jpg">
                     <p>当前奖励区间：8元/位</p>
                 </div>
-                <div>
-                 明杰需要做的内容
-
+                <div class="clearFix red-box">
+                    <img src="dist/images/invitefriends-hongbao-01.jpg" alt="">
+                    <img src="dist/images/invitefriends-hongbao-02_03.jpg" alt="">
                 </div>
-
-
+                <div class="schedule">
+                    <div class="schedule-bg"></div>
+                    <div class="schedule-ratio"></div>
+                    <ul class="schedule-logo">
+                        <li>
+                            <img src="dist/images/invitefriends-jincheng-03.png" alt="">
+                        </li>
+                        <li>
+                            <img src="dist/images/invitefriends-jincheng-03.png" alt="">
+                        </li>
+                        <li>
+                            <img src="dist/images/invitefriends-jincheng-03.png" alt="">
+                        </li>
+                        <li>
+                            <img src="dist/images/invitefriends-jincheng-03.png" alt="">
+                        </li>
+                        <li>
+                            <img src="dist/images/invitefriends-jincheng-03.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+                <ul class="schedule-text clearFix">
+                    <li>分享一次</li>
+                    <li>分享到群</li>
+                    <li>第1位</li>
+                    <li>第2位</li>
+                    <li>
+                        <p>奖励升级</p>
+                    </li>
+                </ul>
+                <div class="bonus-section">
+                    <img src="dist/images/invitefriends-lu.png" alt="">
+                    <ul class="clearFix bonus-section-list">
+                        <li class="bonus-section-small"></li>
+                        <li class="bonus-section-small"></li>
+                        <li class="bonus-section-small"></li>
+                        <li class="bonus-section-small float-right"></li>
+                        <li class="bonus-section-small float-right"></li>
+                        <li class="bonus-section-small float-right"></li>
+                        <li class="bonus-section-small"></li>
+                        <li class="bonus-section-small"></li>
+                        <li class="bonus-section-small"></li>
+                    </ul>
+                </div>
+                <p class="all-money">累计可赚 66749元</p>
+                <div class="withdraw-cash clearFix">
+                    <p>快速提现金额：<span>￥0.00</span></p>
+                    <button type="button">立即提现</button>
+                </div>
             </div>
             <div class="howinvite">
                 <div class="howinvite-title">怎么邀请好友</div>
@@ -78,6 +127,34 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="invitation-share">
+            <ul class="clearFix">
+                <li>
+                    <a href="invitation://friend">
+                        <img src="dist/images/invitation-share-friend_42.jpg" alt="">
+                        <p>朋友圈邀请</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="invitation://wxShare">
+                        <img src="dist/images/invitation-share-wx_42.jpg" alt="">
+                        <p>微信邀请</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="invitation://faceShare">
+                        <img src="dist/images/invitation-share-face_42.jpg" alt="">
+                        <p>面对面邀请</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="invitation://qqShare">
+                        <img src="dist/images/invitation-share-qq_42.jpg" alt="">
+                        <p>QQ邀请</p>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </body>

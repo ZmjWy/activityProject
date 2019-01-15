@@ -1,12 +1,7 @@
-*{
-    margin: 0;
-    border: 0;
-}
 .banner{
-    background-image: url(../images/invitefriends-banner.jpg);
-    background-size: 7.5rem 6.35rem;
+    background: url(../images/invitefriends-banner.jpg) no-repeat top center/100%;
+    height: 6.3rem;
     width: 100%;
-    background-repeat: no-repeat;
     overflow: hidden;
 }
 .rules{
@@ -75,14 +70,10 @@
     width: .68rem;
     height: .26rem;
     margin-left: 5.25rem;
-    background-color: #ffdb01;
-    border-top-right-radius: .13rem;
-    border-top-left-radius: .13rem;
-    border-bottom-right-radius: .13rem;
-    font-size: .16rem;
-    color: #e10a08;
-    text-align: center;
-    line-height: .26rem;
+}
+.copy>img{
+    width: 100%;
+    display: block;
 }
 .code{
     text-align: center;
@@ -147,6 +138,7 @@
     width: .24rem;
     height: .3rem;
     display: inline-block;
+    vertical-align: middle;
 }
 .reward p{
     display: inline-block;
@@ -172,7 +164,7 @@
 .floor{
     margin-top: .45rem;
     width: 7.5rem;
-    padding-bottom: .56rem;
+    padding-bottom: 2.04rem;
 }
 .floor-flow{
     width: 5.1rem;
@@ -206,4 +198,204 @@
 }
 .floor-flow-text p:nth-child(3){
     padding-right: 0.6rem;
+}
+.red-box{
+    width: 6.4rem;
+    height: 1.24rem;
+    margin: -0.15rem auto 0;
+    position: relative;
+    overflow: hidden;
+}
+.red-box>img:first-child{
+    display: block;
+    width: 0.55rem;
+    margin: 0.5rem auto 0;
+}
+.red-box>img:last-child{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 1.1rem;
+    display: block;
+}
+.schedule{
+    width: 6rem;
+    height: 0.42rem;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 0.1rem;
+    position: relative;
+}
+.schedule-bg{
+    width: 6rem;
+    height: 0.22rem;
+    background: #ffe59b;
+    border-radius: 0.22rem;
+}
+.schedule-ratio{
+    height: 0.22rem;
+    background: #3ebc66;
+    border-radius: 0.22rem;
+    position: absolute;
+    top: 0.1rem;
+    left: 0;
+    z-index: 9;
+}
+.schedule-logo{
+    width: 100%;
+    height: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.schedule-logo img{
+    display: block;
+    width: 0.3rem;
+}
+.schedule-logo li{
+    margin: 0 0.55rem;
+}
+.schedule-logo li:first-child{
+    margin-left: 0;
+}
+.schedule-logo li:last-child{
+    margin-right: 0;
+}
+.schedule-text{
+    padding-top: 0.08rem;
+    width: 6.88rem;
+    margin: 0 auto;
+}
+.schedule-text li{
+    width: 20%;
+    float: left;
+    text-align: center;
+    line-height: 0.4rem;
+    height: 0.4rem;
+    font-size: 0.24rem;
+}
+.schedule-text li:first-child{
+    color:  #fd6f01;
+}
+.schedule-text li:nth-child(2){
+    color:  #fd6f01;
+}
+.schedule-text li:nth-child(3){
+    color: #fd6f01;
+}
+.schedule-text li:nth-child(4){
+    color: #fd6f01;
+}
+.schedule-text li:last-child>p{
+    width: 90%;
+    height: 0.4rem;
+    background: #fd6f01;
+    color: #fff;
+    border-radius: 0.4rem;
+    line-height: 0.4rem;
+    font-size: 0.24rem;
+}
+.bonus-section{
+    width: 6.2rem;
+    height: 7.1rem;
+    margin: 0.5rem auto 0;
+    position: relative;
+    overflow: hidden;
+}
+.bonus-section>img{
+    width: 5.6rem;
+    margin: 0.5rem 0 0;
+}
+.bonus-section-list{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.bonus-section-small{
+    width: 1.8rem;
+    height: 1.5rem;
+    float: left;
+    margin-bottom: 0.35rem;
+    overflow: hidden;
+}
+.bonus-section-list li:nth-child(1){
+    background: url(../images/yellow-16.png) no-repeat top center/100%;
+}
+.bonus-section-list li:nth-child(2){
+    background: url(../images/yellow-25.5.png) no-repeat top center/100%;
+}
+.bonus-section-list li:nth-child(3){
+    background: url(../images/yellow-90.png) no-repeat top center/100%;
+}
+.bonus-section-list li:nth-child(4){
+    background: url(../images/yellow-142.5.png) no-repeat top center/100%;
+}
+.bonus-section-list li:nth-child(5){
+    background: url(../images/yellow-200.png) no-repeat top center/100%;
+}
+.bonus-section-list li:nth-child(6){
+    background: url(../images/yellow-525.png) no-repeat top center/100%;
+}
+.bonus-section-list li:nth-child(7){
+    background: url(../images/yellow-1100.png) no-repeat top center/100%;
+}
+.bonus-section-list li:nth-child(8){
+    background: url(../images/yellow-3450.png) no-repeat top center/100%;
+}
+.bonus-section-list li:nth-child(9){
+    background: url(../images/yellow-61200.png) no-repeat top center/100%;
+}
+.bonus-section-list li:nth-child(2), .bonus-section-list li:nth-child(5){
+    margin: 0 0.4rem;
+}
+.bonus-section-list li:nth-child(7), .bonus-section-list li:nth-child(8){
+    width: 2.9rem;
+    height: 1.5rem;
+}
+.bonus-section-list li:nth-child(8){
+    float: right;
+}
+.bonus-section-list li:nth-child(9){
+    width: 100%;
+    margin-bottom: 0;
+}
+.float-right{
+    float: right;
+}
+.all-money{
+    font-size: 0.28rem;
+    text-align: center;
+    color: #d11c07;
+    margin: 0.1rem 0 0.5rem 0;
+}
+.withdraw-cash{
+    width: 5.65rem;
+    margin: 0 auto;
+}
+.withdraw-cash>p{
+    float: left;
+    line-height: 0.7rem;
+    font-size: 0.28rem;
+    color:#fff;
+}
+.withdraw-cash>p>span{
+    font-size: 0.36rem;
+    color: #ffee83;
+}
+.withdraw-cash>button{
+    width: 2rem;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    text-align: center;
+    background: #d6d6d6;
+    color: #fff;
+    border-radius: 0.7rem;
+    float: right;
+    outline: none;
+    border: none;
 }
