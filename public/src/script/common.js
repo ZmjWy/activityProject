@@ -149,7 +149,7 @@ function getId(id) {
         var $modalSmall;
         if(status == 1){
             $modalSmall = $('<div class="modal-small" style="width: 5.6rem;height: 3.82rem;text-align: right;position: relative;">' +
-                '<img class="close-box" src="dist/images/modal-close_03.png" style="width: 0.5rem;height: 0.5rem;position: absolute;right: 0;top: -0.9rem;" alt="" />'+
+                '<img class="close-box" src="http://file.xcmad.com/dist/images/modal-close_03.png" style="width: 0.5rem;height: 0.5rem;position: absolute;right: 0;top: -0.9rem;" alt="" />'+
                 '<div style="width: 5.5rem;height: 3.82rem;background: #fff;border-radius:10px; ">' +
                 '<div style="width: 100%;padding: 0.38rem 0;overflow: hidden;">' +
                 '<img style="width: '+titleWidth+';display: block;margin: 0 auto;" src="'+ title +'" alt="" />'+
@@ -160,7 +160,7 @@ function getId(id) {
                 '</div>');
         }else{
             $modalSmall = $('<div class="modal-small" style="width: 5.6rem;height: 3.82rem;text-align: right;position: relative;">' +
-                '<img class="close-box" src="dist/images/modal-close_03.png" style="width: 0.5rem;height: 0.5rem;position: absolute;right: 0;top: -0.9rem;" alt="" />'+
+                '<img class="close-box" src="http://file.xcmad.com/dist/images/modal-close_03.png" style="width: 0.5rem;height: 0.5rem;position: absolute;right: 0;top: -0.9rem;" alt="" />'+
                 '<div style="width: 5.5rem;height: 3.82rem;background: #fff;border-radius:10px; ">' +
                 '<div style="width: 100%;padding: 0.3rem 0;overflow: hidden;">' +
                 '<p style="font-size: '+titleWidth+';text-align: center;margin:0;">'+ title+'</p>'+
@@ -206,13 +206,13 @@ function shortcut(){
         '                    <ul class="clearFix">\n' +
         '                        <li>\n' +
         '                            <a href="invitation://shortcutWx">\n' +
-        '                                <img src="dist/images/shortcut-share-ong_03.jpg" alt="">\n' +
+        '                                <img src="http://file.xcmad.com/dist/images/shortcut-share-ong_03.jpg" alt="">\n' +
         '                                <p>微信邀请</p>\n' +
         '                            </a>\n' +
         '                        </li>\n' +
         '                        <li>\n' +
         '                            <a href="invitation://shortcutFace">\n' +
-        '                                <img src="dist/images/shortcut-share-two_05.jpg" alt="">\n' +
+        '                                <img src="http://file.xcmad.com/dist/images/shortcut-share-two_05.jpg" alt="">\n' +
         '                                <p>面对面邀请</p>\n' +
         '                            </a>\n' +
         '                        </li>\n' +
@@ -220,25 +220,25 @@ function shortcut(){
         '                    <ul class="clearFix">\n' +
         '                        <li>\n' +
         '                            <a href="invitation://shortcutFriend">\n' +
-        '                                <img src="dist/images/shortcut-share-three_10.jpg" alt="">\n' +
+        '                                <img src="http://file.xcmad.com/dist/images/shortcut-share-three_10.jpg" alt="">\n' +
         '                                <p>朋友圈邀请</p>\n' +
         '                            </a>\n' +
         '                        </li>\n' +
         '                        <li>\n' +
         '                            <a href="invitation://shortcutWxAll">\n' +
-        '                                <img src="dist/images/shortcut-share-four_10.jpg" alt="">\n' +
+        '                                <img src="http://file.xcmad.com/dist/images/shortcut-share-four_10.jpg" alt="">\n' +
         '                                <p>微信群发</p>\n' +
         '                            </a>\n' +
         '                        </li>\n' +
         '                        <li>\n' +
         '                            <a href="invitation://shortcutQq">\n' +
-        '                                <img src="dist/images/shortcut-share-five_10.jpg" alt="">\n' +
+        '                                <img src="http://file.xcmad.com/dist/images/shortcut-share-five_10.jpg" alt="">\n' +
         '                                <p>QQ好友</p>\n' +
         '                            </a>\n' +
         '                        </li>\n' +
         '                        <li>\n' +
         '                            <a href="invitation://shortcutDx">\n' +
-        '                                <img src="dist/images/shortcut-share-six_10.jpg" alt="">\n' +
+        '                                <img src="http://file.xcmad.com/dist/images/shortcut-share-six_10.jpg" alt="">\n' +
         '                                <p>短信邀请</p>\n' +
         '                            </a>\n' +
         '                        </li>\n' +

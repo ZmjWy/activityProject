@@ -10,11 +10,15 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <title>幸运抽奖</title>
-    <script type=text/javascript src='dist/script/fontsizeset.js'></script>
-    <script type=text/javascript src='dist/script/jquery.js'></script>
-    <script type=text/javascript src='dist/script/common.js'></script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/fontsizeset.js'></script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/jquery.js'></script>
+    <!--<script type=text/javascript src='http://file.xcmad.com/dist/script/intercept.config.js'></script>-->
+    <script type=text/javascript src='dist/script/intercept.config.js'></script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/common.js'></script>
+    <!--<script type=text/javascript src='http://file.xcmad.com/dist/script/turntable.js'></script>-->
     <script type=text/javascript src='dist/script/turntable.js'></script>
-    <link rel="stylesheet" href="dist/style/reset.css">
+    <link rel="stylesheet" href="http://file.xcmad.com/dist/style/reset.css">
+    <!--<link rel="stylesheet" href="http://file.xcmad.com/dist/style/turntable.css">-->
     <link rel="stylesheet" href="dist/style/turntable.css">
 </head>
 <body>
@@ -22,30 +26,26 @@
         <section class="turntable-animate">
             <a class="rule-btn" href="javascript:void(0);">
                 <span>活动规则</span>
-                <img src="dist/images/turntable-rule-btn_03.png" alt="">
+                <img src="http://file.xcmad.com/dist/images/turntable-rule-btn_03.png" alt="">
             </a>
             <a id="scroll-rule" class="rule-btn lucky-draw" href="javascript:void(0);">
                 <span>抽奖记录</span>
-                <img src="dist/images/turntable-rule-btn_03.png" alt="">
+                <img src="http://file.xcmad.com/dist/images/turntable-rule-btn_03.png" alt="">
             </a>
             <div class="winning-record">
                 <ul id="record-animate">
-                    <li>1某某某成功抽中256GiPhoneXS</li>
-                    <li>2某某某成功抽中256GiPhoneXS</li>
-                    <li>3某某某成功抽中256GiPhoneXS</li>
-                    <li>4某某某成功抽中256GiPhoneXS</li>
                 </ul>
             </div>
             <div class="turntable-suggest">
-                <img src="./dist/images/turntable-logo.png" alt="">
+                <img src="http://file.xcmad.com/dist/images/turntable-logo.png" alt="">
                 <p>活动时间：2019.01.30~02.14</p>
                 <p>您还剩 <span id="degree">0</span> 次抽奖机会</p>
                 <p>分享给不同的好友，可获得更多的抽奖机会 <br/>
                     同一好友领奖仅能获得一次抽奖机会</p>
             </div>
             <div class="turntable-activity">
-                <img id="turntable-pointer" src="./dist/images/turntable-btn.png" alt="pointer">
-                <img id="turntable-double" src="./dist/images/turntable-goods.png" alt="turntable">
+                <img id="turntable-pointer" src="http://file.xcmad.com/dist/images/turntable-btn.png" alt="pointer">
+                <img id="turntable-double" src="http://file.xcmad.com/dist/images/turntable-goods.png" alt="turntable">
             </div>
         </section>
         <section class="turntable-rule">
@@ -74,7 +74,7 @@
                     <p>状态</p>
                 </div>
                 <div class="no-record">
-                    <img src="dist/images/turntable-no-record_03.jpg" alt="">
+                    <img src="http://file.xcmad.com/dist/images/turntable-no-record_03.jpg" alt="">
                     <p>您今天还没有抽奖<br/>赶快去分享抽奖吧</p>
                 </div>
                 <ul class="record-list-show" style="display: none;">
@@ -85,26 +85,26 @@
     <div class="turntable-share">
         <ul class="clearFix">
             <li>
-                <a href="javascript:void (0);">
-                    <img src="dist/images/turntable-1_02.jpg" alt="">
+                <a id="turntable-friend" href="javascript:void (0);">
+                    <img src="http://file.xcmad.com/dist/images/turntable-1_02.jpg" alt="">
                     <p>微信朋友圈</p>
                 </a>
             </li>
             <li>
-                <a href="javascript:void (0);">
-                    <img src="dist/images/turntable-2_03.jpg" alt="">
+                <a id="turntable-wxShare" href="javascript:void (0);">
+                    <img src="http://file.xcmad.com/dist/images/turntable-2_03.jpg" alt="">
                     <p>微信好友</p>
                 </a>
             </li>
             <li>
-                <a href="javascript:void (0);">
-                    <img src="dist/images/turntable-3_03.jpg" alt="">
+                <a id="turntable-qqZoneShare" href="javascript:void (0);">
+                    <img src="http://file.xcmad.com/dist/images/turntable-3_03.jpg" alt="">
                     <p>QQ空间</p>
                 </a>
             </li>
             <li>
-                <a href="javascript:void (0);">
-                    <img src="dist/images/turntable-4_03.jpg" alt="">
+                <a id="turntable-qqShare" href="javascript:void (0);">
+                    <img src="http://file.xcmad.com/dist/images/turntable-4_03.jpg" alt="">
                     <p>QQ好友</p>
                 </a>
             </li>

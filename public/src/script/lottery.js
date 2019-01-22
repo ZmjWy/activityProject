@@ -1,93 +1,56 @@
 $(function(){
     var getting = new GetQueryString;
-    var localIp = "";
     var callNum = true; //调用次数
     /**
      * 获取本地ip
      */
     function getYourIP(){
         var RTCPeerConnection = window.RTCPeerConnection || window.webkitRTCPeerConnection || window.mozRTCPeerConnection;
-        if (RTCPeerConnection) (function () {
-            var rtc = new RTCPeerConnection({iceServers:[]});
+        if (RTCPeerConnection) {
+            var rtc = new RTCPeerConnection({iceServers: []});
             if (1 || window.mozRTCPeerConnection) {
-                rtc.createDataChannel('', {reliable:false});
+                rtc.createDataChannel('', {reliable: false});
             };
-
             rtc.onicecandidate = function (evt) {
-                if (evt.candidate) grepSDP("a="+evt.candidate.candidate);
+                if (evt.candidate) {
+                    var ip = evt.candidate.candidate.match(/(\d{1,3}\.)+\d{1,3}/g);
+                    //判断ip是否相等
+                    if( ip != getting.local_ip){
+                        $.ajax({
+                            type: 'POST',
+                            url: ctxs + '/turntable/h5/saveTimes?tel_num='+ getting.tel_num + '&type=2'+ '&str='+ip[0].replace(/\./g,'') +  '&time='+ (+new Date()),
+                            dataType: 'jsonp',
+                            jsonp: 'callback',
+                            jsonpCallback: 'shareNumIp',
+                            success: function(data){
+                                //alert(eval("("+data+")"));
+                            },
+                            error:function(data,type, err){
+                                alert ("ajax错误类型："+type);
+                                alert (err);
+                            }
+                        });
+                    }
+                };
             };
             rtc.createOffer(function (offerDesc) {
-                grepSDP(offerDesc.sdp);
                 rtc.setLocalDescription(offerDesc);
-            }, function (e) { console.warn("offer failed", e); });
-
-            var addrs = Object.create(null);
-            addrs["0.0.0.0"] = false;
-            function updateDisplay(newAddr) {
-                if (newAddr in addrs) return;
-                else addrs[newAddr] = true;
-                var displayAddrs = Object.keys(addrs).filter(function (k) { return addrs[k]; });
-                for(var i = 0; i < displayAddrs.length; i++){
-                    if(displayAddrs[i].length > 16){
-                        displayAddrs.splice(i, 1);
-                        i--;
-                    }
-                }
-                localIp = displayAddrs[0];
-            }
-
-            function grepSDP(sdp) {
-                var hosts = [];
-                sdp.split('\r\n').forEach(function (line, index, arr) {
-                    if (~line.indexOf("a=candidate")) {
-                        var parts = line.split(' '),
-                            addr = parts[4],
-                            type = parts[7];
-                        if (type === 'host') updateDisplay(addr);
-                    } else if (~line.indexOf("c=")) {
-                        var parts = line.split(' '),
-                            addr = parts[2];
-                        updateDisplay(addr);
-                    }
-                });
-            }
-        })();
-        else{
+            }, function (e) {
+                console.warn("offer failed", e);
+            });
+        }else{
             console.warn("请使用主流浏览器：chrome,firefox,opera,safari");
         }
-    }
+    };
     getYourIP();
-    /**
-     * 点击刮奖
-     */
-    $('.scratch-area-child').on('click',function(){
-        $('.scratch-area').removeClass('area-relative');
-        $('#scratch-area').addClass('scratch-area-style');
-        $(this).remove();
 
-    });
+
     /**
      * 前往花生
      */
     $('.show-lottery').on('click', function(){
         $(window).usrLoad();
     })
-    /**
-     *获取抽奖次数
-     */
-    function shareNum(){
-        $.ajax({
-            type: 'GET',
-            url: ctxs + '/turntable/h5/saveTimes?tel_num='+ getting.tel_num + '&type=2' + '&str=' +localIp+ '&time='+ (+new Date()),
-            dataType: 'jsonp',
-            jsonp: 'callback',
-            jsonpCallback: 'share',
-            success: function(data){
-
-            },
-            error: function(err){}
-        })
-    }
     /**
      * 刮奖
      * @type {Element}
@@ -107,6 +70,8 @@ $(function(){
         context.drawImage(imgs, 0, 0, w, h);
         context.globalCompositeOperation = 'destination-out';//设置刮过之处是透明
     }
+// 调用接口
+//    scratchArea.addEventListener('touchstart', shareNum, false);
 // 鼠标按下 增加mousemove的事件监听
     canvas.addEventListener('mousedown', drawArcMouseHandle);
     canvas.addEventListener('mouseup', function(event) {
@@ -167,7 +132,6 @@ $(function(){
     function showResult() {
         $('.scratch-area').addClass('area-relative');
         $('.show-lottery').show();
-        shareNum();
         $('#degree').text('0');
     }
 

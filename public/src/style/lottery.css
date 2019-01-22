@@ -8,7 +8,7 @@ body{
     background-color: #fff3f3;
 }
 .banner{
-    background: url(../images/lottery-lottery.jpg) no-repeat top center/100%;
+    background: url(http://file.xcmad.com/dist/images/lottery-lottery.jpg) no-repeat top center/100%;
     background-size: 7.5rem 9.28rem;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -41,7 +41,7 @@ body{
 .scratch-area-child{
     width: 6.56rem;
     height: 2.92rem;
-    background: url("../images/lottery-scratch-area.jpg") no-repeat top center/100%;
+    background: url("http://file.xcmad.com/dist/images/lottery-scratch-area.jpg") no-repeat top center/100%;
     font-size: .42rem;
     text-align: center;
     line-height: 2.9rem;
@@ -54,7 +54,7 @@ body{
     z-index: 99;
 }
 .scratch-area-style{
-    background: url("../images/lottery-scratch-area-1_03.jpg") no-repeat top center/100%;
+    background: url("http://file.xcmad.com/dist/images/lottery-scratch-area-1_03.jpg") no-repeat top center/100% 100%;
 }
 #scratch-area{
     width: 6.56rem;

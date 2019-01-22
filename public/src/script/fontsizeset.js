@@ -51,6 +51,8 @@ Array.prototype.removeByValue = function (val) {
 * 公共变量
 * */
 //var ctx = 'http://api.zizhengjiankang.com';
+//var shareCtx = 'http://wap.zizhengjiankang.com';
 //var ctxs = 'http://api.zizhengjiankang.com/kk-api-v112';
 var ctx = 'http://www.xinguad.com';
 var ctxs = 'http://www.xinguad.com/kk-api-v112';
+var shareCtx = 'http://www.xinguad.com';

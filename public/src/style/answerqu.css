@@ -135,7 +135,7 @@
 	/*content:"";*/
 	/*height:0.3rem;*/
 	/*width:0.3rem;*/
-	/*background-image: url("../images/answer-option_08.png");*/
+	/*background-image: url("http://file.xcmad.com/dist/images/answer-option_08.png");*/
 	/**/
 	/*!*border-radius:0.16rem;*!*/
 	/*!*position: absolute;*!*/
@@ -146,7 +146,7 @@
 	/*}*/
 .question11:checked+.quspan{
 	border:none;
-	background-image: url("../images/answer-option_08.png");
+	background-image: url("http://file.xcmad.com/dist/images/answer-option_08.png");
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 }

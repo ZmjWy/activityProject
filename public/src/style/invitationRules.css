@@ -1,9 +1,11 @@
+body{
+    background: #fe5e00;
+}
 .main-rule{
     padding-top: 0.6rem;
     width: 100%;
-    height: 5.06rem;
-    background:url(../images/invitationRules-banner.jpg) no-repeat top center/100% 100%;
-    overflow: hidden;
+    min-height: 5.06rem;
+    background:url(http://file.xcmad.com/dist/images/invitationRules-banner.jpg) no-repeat top center/100% 100%;
     color:#ffecec;
 }
 .mainTitle{
@@ -34,14 +36,14 @@
     padding-bottom: .34rem;
 }
 .specific-rewards{
-    width: 6.9rem;
+    width: 92%;
     margin: 0 auto;
     background-color: #fff;
     border-radius:8px;
     overflow: hidden;
 }
 .module{
-    width: 6.5rem;
+    width: 94.2028%;
     margin:0 auto;
 }
 .module-title{
@@ -54,7 +56,7 @@
     text-align: center;
 }
 .module-main{
-    width: 6.5rem;
+    width:100%;
     margin: 0 auto;
     padding: .19rem 0;
     background-color: #ffe2d1;
@@ -70,7 +72,7 @@
 }
 .unit{
     float: left;
-    width: 1.28rem;
+    width: 19.6923%;
     margin: 0 auto;
 }
 .day{
@@ -85,7 +87,7 @@
     text-align: center;
 }
 .statement{
-    width:6.1rem;
+    width: 88.4057%;
     margin: .42rem auto;
 }
 .statement p:nth-of-type(1){
