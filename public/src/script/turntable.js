@@ -38,10 +38,10 @@ $(function(){
         onFriend('wx',androidObj.shareWx);
     });
     $('#turntable-qqZoneShare').on('click',function(){
-        onFriend('qq',androidObj.shareQq);
+        onFriend('qq',androidObj.shareZone);
     });
     $('#turntable-qqShare').on('click',function(){
-        onFriend('qq',androidObj.shareZone);
+        onFriend('qq',androidObj.shareQq);
     });
     /**
      * 奖励记录

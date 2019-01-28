@@ -1,6 +1,7 @@
 $(function () {
     var getString = new GetQueryString;
     var imgList = ['red-16', 'red-25.5', 'red-90', 'red-142.5', 'red-200', 'red-525', 'red-1100', 'red-3450', 'red-61200'];
+    var moneyList = [8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12]
     var code = '';
     //调用公用分享
     function getData() {
@@ -35,6 +36,7 @@ $(function () {
      * @param num
      */
     function schedule(num) {
+        console.log(num)
         var r = '';
         if(num == 1){
             r = '6%';
@@ -49,8 +51,7 @@ $(function () {
         num>0&&$('.schedule-logo li').eq(num - 1).children().attr('src', 'http://file.xcmad.com/dist/images/invitefriends-jincheng-02.png').css({width: '0.35rem'});
         for (var i = num; i >= 2; i--) {
             if(num == 4){
-                $('.schedule-logo li').eq(i-1).children().attr('src', 'http://file.xcmad.com/dist/images/invitefriends-jincheng_01.png');
-                $('.schedule-logo li').eq(i).children().attr('src', 'http://file.xcmad.com/dist/images/invitefriends-jincheng_01.png');
+                $('.schedule-logo li').children().attr('src', 'http://file.xcmad.com/dist/images/invitefriends-jincheng_01.png');
             }else{
                 $('.schedule-logo li').eq(i - 2).children().attr('src', 'http://file.xcmad.com/dist/images/invitefriends-jincheng_01.png');
             }
@@ -66,6 +67,7 @@ $(function () {
                 'background': 'url(http://file.xcmad.com/dist/images/' + imgList[i - 1] + '.png) no-repeat top center/100%'
             })
         }
+        $('#show_money').text(moneyList[num-1]);
     }
 
     //将传入数据转换为字符串,并清除字符串中非数字与.的字符
