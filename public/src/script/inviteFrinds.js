@@ -1,7 +1,7 @@
 $(function () {
     var getString = new GetQueryString;
     var imgList = ['red-16', 'red-25.5', 'red-90', 'red-142.5', 'red-200', 'red-525', 'red-1100', 'red-3450', 'red-61200'];
-    var moneyList = [8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12]
+    var moneyList = [8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12];
     var code = '';
     //调用公用分享
     function getData() {
@@ -19,7 +19,7 @@ $(function () {
                     $('#inviteF').text(data.invite_friends);
                     $('#validF').text(data.effective_friends);
                     $('#income').text(data.yaoqing_money);
-                    //rewardShow(data.yaoqing_num_speed_of_progress);
+                    rewardShow(data.yaoqing_num_speed_of_progress);
                     $('#withdraw-money').text('￥'+ getFloatStr(data.money_balance));
                     data.money_balance>0&&($('.withdraw-cash-btn').css({background:'#ffdb01',color:'#e10a08'}),$('.withdraw-cash-btn').on('click', function(){
                         androidObj.callBack(androidObj.takeCashActivity);
