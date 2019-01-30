@@ -267,7 +267,6 @@
     // 无数据
     MyDropLoad.prototype.noData = function(flag){
         var me = this;
-        console.log(flag)
         if(flag === undefined || flag == true){
             me.isData = false;
         }else if(flag == false){
