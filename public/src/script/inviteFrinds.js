@@ -12,13 +12,13 @@ $(function () {
             jsonpCallback: 'getData',
             success: function (data) {
                 if (data.status == 100) {
+                    console.log(data)
                     code = data.invate_code;
                     $('#invate_code').text(data.invate_code);
                     $('#inviteF').text(data.invite_friends);
                     $('#validF').text(data.effective_friends);
                     $('#income').text(data.yaoqing_money);
-                    schedule(data.yaoqing_speed_of_progress);
-                    rewardShow(data.yaoqing_num_speed_of_progress);
+                    //rewardShow(data.yaoqing_num_speed_of_progress);
                     $('#withdraw-money').text('￥'+ getFloatStr(data.money_balance));
                     data.money_balance>0&&($('.withdraw-cash-btn').css({background:'#ffdb01',color:'#e10a08'}),$('.withdraw-cash-btn').on('click', function(){
                         androidObj.callBack(androidObj.takeCashActivity);
@@ -31,40 +31,24 @@ $(function () {
     };
     getData();
     /**
-     * 奖励区间
-     * @param num
-     */
-    function schedule(num) {
-        var r = '';
-        if(num == 1){
-            r = '6%';
-        }else if(num == 2){
-            r = (num - 1) * 25 + 3 + '%';
-        }else if (num == 4){
-            r = 100+ '%';
-        }else{
-            r = (num - 1) * 25 + '%';
-        }
-        $('.schedule-ratio').css({width: r});
-        num>0&&$('.schedule-logo li').eq(num - 1).children().attr('src', 'http://file.xcmad.com/dist/images/invitefriends-jincheng-02.png').css({width: '0.35rem'});
-        for (var i = num; i >= 2; i--) {
-            if(num == 4){
-                $('.schedule-logo li').eq(i-1).children().attr('src', 'http://file.xcmad.com/dist/images/invitefriends-jincheng_01.png');
-                $('.schedule-logo li').eq(i).children().attr('src', 'http://file.xcmad.com/dist/images/invitefriends-jincheng_01.png');
-            }else{
-                $('.schedule-logo li').eq(i - 2).children().attr('src', 'http://file.xcmad.com/dist/images/invitefriends-jincheng_01.png');
-            }
-        }
-    }
-    /**
      * 奖励区间展示
-     * @param num
+     * @param
+     * num：循环展示区间上限
      */
     function rewardShow(num) {
-        for (var i = num; i >= 1; i--) {
-            $('.bonus-section-list li').eq(i - 1).css({
-                'background': 'url(http://file.xcmad.com/dist/images/' + imgList[i - 1] + '.png) no-repeat top center/100%'
-            })
+        for (var i=1; i<=num; i++) {
+            if(i != 9){
+                $('.bonus-unit-1').eq(i - 1).css({
+                    'background': 'linear-gradient(to right,#c30404,#df2121)'
+                })
+            } else { //第九个变背景图
+                $('.unit-61200').css({
+                    'background': 'url("dist/images/bonus-unit-61200-bg-red.png")  no-repeat scroll top center/100% 100%'
+                }),
+                $('.bonus-unit-4 p').css({
+                    'color': '#fff'
+                })
+            }
         }
     }
 
