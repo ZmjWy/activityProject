@@ -49,6 +49,13 @@ var GetQueryString = function GetQueryString() {
 (function($){
     var isAndroid;
     var isIOS;
+    var hrefList = [{
+        href: 'http://www.161914.com/a/2b0a16c0',
+        downUrl: 'http://file.xcmad.com/app-o_share_121-release.apk'
+    },{
+        href: 'http://www.161914.com/a/33689db0',
+        downUrl: 'https://kkapi.oss-cn-beijing.aliyuncs.com/huasheng_share_2.apk'
+    }];
     $.fn.usrLoad = function(data){
         return new UsrLoad(this, data);
     }
@@ -65,7 +72,7 @@ var GetQueryString = function GetQueryString() {
             // 跳转链接
             if(isAndroid){
                 // window.location.href = 'downLoad.html';
-                window.location.href = 'http://www.161914.com/a/2b0a16c0';
+                window.location.href =  hrefList[data].href;
             }
         }
         // Safari 浏览器跳转IOS下载页
@@ -78,21 +85,20 @@ var GetQueryString = function GetQueryString() {
             if(isIOS){
 
             }else if(isAndroid){
-                openApp('myapp://huasheng.com/openApp');
+                openApp('myapp://huasheng.com/openApp', data);
             }
         }
 
     }
     //判断手机上是否安装了app，如果安装直接打开，如果没安装，跳转到下载页面
-    var openApp = function(url) {
-        console.log('下载');
+    var openApp = function(url, i) {
         if(isAndroid){
             var timeout, t = 1000, hasApp = true;
             var t1 = Date.now();
             var ifr = document.createElement("iframe");
             var openScript = setTimeout(function () {
                 if (!hasApp) {
-                    var durl = "http://file.xcmad.com/xcm_share_1.2.2.1.apk";
+                    var durl = hrefList[i].downUrl;
                     window.location.href=durl;
                 }
                 document.body.removeChild(ifr);

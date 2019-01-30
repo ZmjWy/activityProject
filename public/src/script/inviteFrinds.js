@@ -1,6 +1,7 @@
 $(function () {
     var getString = new GetQueryString;
     var imgList = ['red-16', 'red-25.5', 'red-90', 'red-142.5', 'red-200', 'red-525', 'red-1100', 'red-3450', 'red-61200'];
+    var moneyList = [8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12]
     var code = '';
     //调用公用分享
     function getData() {
@@ -50,6 +51,7 @@ $(function () {
                 })
             }
         }
+        $('#show_money').text(moneyList[num-1]);
     }
 
     //将传入数据转换为字符串,并清除字符串中非数字与.的字符
