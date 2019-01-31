@@ -12,6 +12,7 @@ $(function () {
         //清空回调
         clearTimeout(times);
         var index = $(this).index();
+        $('#bonus_notes').text(bonusNotes[index]);
         $('.info-show').eq(index).show().siblings().hide();
         $(this).css('color','#ff5337').siblings().css('color','#000');
         scrollNum = 1;
@@ -20,7 +21,7 @@ $(function () {
             $('#option-speed').css('left','0%');
             typeNum = 1;
         }else if(index == 1){
-            $('#romanceAwaken').children().remove();
+            $('#inviteFriends').children().remove();
             $('#option-speed').css('left','33.3333%');
             typeNum = 2;
         }else{
@@ -91,12 +92,12 @@ $(function () {
                 '                                        <div class="clearFix">\n' +
                 '                                            <a href="javascript:void(0);" class="remind-dx" data-dx="'+list.uid+'">\n' +
                 '                                                <img src="http://file.xcmad.com/dist/images/friend-m-dx_03.jpg" alt="">\n' +
-                '                                                <p>短信提醒</p>\n' +
+                '                                                <p style="color:#000;">短信提醒</p>\n' +
                 '                                            </a>\n' +
                 '                                            <span></span>\n' +
-                '                                            <a href="friend://wx='+ list.uid +'" class="remind-wx">\n' +
+                '                                            <a href="javascript:void(0);" class="remind-wx">\n' +
                 '                                                <img src="http://file.xcmad.com/dist/images/friend-m-wx_03.jpg" alt="">\n' +
-                '                                                <p>微信提醒</p>\n' +
+                '                                                <p style="color:#000;">微信提醒</p>\n' +
                 '                                            </a>\n' +
                 '                                        </div>\n' +
                 '                                    </div>\n' +
@@ -125,6 +126,7 @@ $(function () {
             var $that = $(this);
             $('.modal-close').hide();
             $('.talk-modal-box').hide();
+            androidObj.callBack(androidObj.shortcutWx);
             setTimeout(function(){
                 $that.parents('.talk-modal-box').prev().addClass('option-prompt-style').text('已提醒').unbind('click');
             },5000)
@@ -164,7 +166,7 @@ $(function () {
                 '                                                <p>短信提醒</p>\n' +
                 '                                            </a>\n' +
                 '                                            <span></span>\n' +
-                '                                            <a href="friend://wx='+ list.uid +'" class="remind-wx">\n' +
+                '                                            <a href="javascript:void(0);" class="remind-wx">\n' +
                 '                                                <img src="http://file.xcmad.com/dist/images/friend-m-wx_03.jpg" alt="">\n' +
                 '                                                <p>微信提醒</p>\n' +
                 '                                            </a>\n' +
@@ -195,6 +197,7 @@ $(function () {
             var $that = $(this);
             $('.modal-close').hide();
             $('.talk-modal-box').hide();
+            androidObj.callBack(androidObj.shortcutWx);
             setTimeout(function(){
                 $that.parents('.talk-modal-box').prev().addClass('option-prompt-style').text('已提醒').unbind('click');
             },5000)
@@ -233,7 +236,7 @@ $(function () {
             '您将获得'+'<span style="color: #fe233e;">3000金币</span>'+'奖励'+ add +'。</span>', '','<span style="font-size: 0.44rem;">'+btn+'</span>',function(){
             // 短信唤起
             $.ajax({
-                url: ctxs + '/act/h5/wakeFriend?tel_num='+ getString.tel_num +'&friendUid='+ dx +'&type=1',
+                url: ctxs + '/act/sp/h5/wakeFriendSpring?tel_num='+ getString.tel_num +'&friendUid='+ dx +'&type=1',
                 type: 'GET',
                 dataType: 'jsonp',
                 jsonp: 'callback',
@@ -268,9 +271,9 @@ $(function () {
             jsonp: 'callback',
             jsonpCallback: 'friendList'+ Math.random().toString().substr(2),
             success: function(data){
-                console.log(data)
                 if(data.status == 0){
                     if(writeInfo){
+                        $('#allGold').text(data.response.allGold);
                         $('#friendCount').text(data.response.invitive_friendCount);
                         $('#todayGold').text(data.response.effective_friendCount);
                     }
@@ -312,30 +315,6 @@ $(function () {
             }
         })
     }
-    //获取累计贡献
-    function getAllNum(me, type, num){
-        /*
-         * type 类型
-         * num 页数
-         * */
-        $.ajax({
-            url: ctxs + '/act/h5/friendList?tel_num='+getString.tel_num+'&isActive='+type+'&page='+ num,
-            type: 'GET',
-            dataType: 'jsonp',
-            jsonp: 'callback',
-            jsonpCallback: 'getAllNum',
-            success: function(data){
-                console.log(data)
-                if(data.status == 0){
-                    $('#allGold').text(data.response.allGold);
-                }
-            },
-            error:function (err) {
-
-            }
-        })
-    }
-    getAllNum("", 1, scrollNum);
     //直接调用
     friendList("", 1, scrollNum);
 
@@ -367,5 +346,9 @@ $(function () {
     // 快捷分享
     $('.invitation-shortcut-share').on('click', function () {
         $(this).hide();
+    })
+    //进入邀请页面
+    $('#my_invite').on('click', function(){
+        androidObj.callBack(androidObj.friendListActivity);
     })
 })

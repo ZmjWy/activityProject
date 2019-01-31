@@ -44,7 +44,7 @@ $(function () {
                 })
             } else { //第九个变背景图
                 $('.unit-61200').css({
-                    'background': 'url("dist/images/bonus-unit-61200-bg-red.png")  no-repeat scroll top center/100% 100%'
+                    'background': 'url("http://file.xcmad.com/dist/images/bonus-unit-61200-bg-red.png")  no-repeat scroll top center/100% 100%'
                 }),
                 $('.bonus-unit-4 p').css({
                     'color': '#fff'

@@ -1,6 +1,7 @@
 .invite-friends{
     background: #fe5e00;
     overflow: hidden;
+    padding-bottom: 1rem;
 }
 .banner{
     background: url(http://file.xcmad.com/dist/images/invitefriends-banner.jpg) no-repeat top center/100% 100%;
@@ -123,7 +124,7 @@
     overflow: hidden;
 }
 .content{
-    background: url("../images/invitefriends-main.png") no-repeat scroll top center/100% 100%;
+    background: url("http://file.xcmad.com/dist/images/invitefriends-main.png") no-repeat scroll top center/100% 100%;
     width: 94.6666%;
     height: 11.86rem;
     margin: 0 auto;
@@ -315,7 +316,7 @@
     left: 2.4rem;
     position: absolute;
     top: 1.72rem;
-    background: url('../images/bonus-unit-61200-bg-yellow.png')  no-repeat scroll top center/100% 100%;
+    background: url('http://file.xcmad.com/dist/images/bonus-unit-61200-bg-yellow.png')  no-repeat scroll top center/100% 100%;
     width: 30.7692%;
     height: 2.14rem;
 }

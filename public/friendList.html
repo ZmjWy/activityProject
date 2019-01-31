@@ -177,8 +177,10 @@
             var scrollNum = 1; //翻页
             var typeNum = 1; //类型
             var trNum = 0; //列表索引
+            var times = null;
             // 列表切换
             $('.option-items').on('click', function () {
+                clearTimeout(times);
                 var index = $(this).index();
                 if(index == 0){
                     $('#romanceActive').children().remove();
@@ -196,7 +198,9 @@
                     scrollNum = 1;
                 }
                 dropload.resetload();
-                friendList("", typeNum, scrollNum);
+                times = setTimeout(function(){
+                    friendList("", typeNum, scrollNum);
+                },1000);
             })
             // 唤醒模态框
 
@@ -405,8 +409,12 @@
                 scrollRange: function(me) {
                 },
                 loadDownFn: function (me) {
-                    scrollNum++;
-                    friendList(me, typeNum, scrollNum);
+                    clearTimeout(times);
+                    times = setTimeout(function(){
+                        scrollNum++;
+                        friendList(me, typeNum, scrollNum);
+                    },1000);
+
                 },
             });
             //分享模态
