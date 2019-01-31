@@ -11,18 +11,18 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <title>好友列表</title>
-    <script type=text/javascript src='dist/script/fontsizeset.js'></script>
-    <script type=text/javascript src='dist/script/zepto.js'></script>
-    <script type=text/javascript src='dist/script/common.js'></script>
-    <script type=text/javascript src='dist/script/moreLoad.js'></script>
-    <link rel="stylesheet" href="dist/style/reset.css">
-    <link rel="stylesheet" href="dist/style/style.css">
-    <link rel="stylesheet" href="dist/style/swiper.css">
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/fontsizeset.js'></script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/zepto.js'></script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/common.js'></script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/moreLoad.js'></script>
+    <link rel="stylesheet" href="http://file.xcmad.com/dist/style/reset.css">
+    <link rel="stylesheet" href="http://file.xcmad.com/dist/style/style.css">
+    <link rel="stylesheet" href="http://file.xcmad.com/dist/style/swiper.css">
 </head>
 <body style="background-color: #fff;">
     <div class="friend-list container friend-container">
         <div class="friend-list-banner">
-            <img src="dist/images/friend-list-banner_02.jpg" alt="">
+            <img src="http://file.xcmad.com/dist/images/friend-list-banner_02.jpg" alt="">
             <ul class="clearFix">
                 <li>
                     <p id="friendCount"></p>
@@ -79,7 +79,7 @@
                         </tbody>
                     </table>
                     <div class="list-info-null" id="info-active">
-                        <img style="width: 1.74rem;height: 2.58rem;display: block;margin: 0.48rem auto 0;" src="dist/images/friend-null-one_03.jpg" alt="">
+                        <img style="width: 1.74rem;height: 2.58rem;display: block;margin: 0.48rem auto 0;" src="http://file.xcmad.com/dist/images/friend-null-one_03.jpg" alt="">
                         <p>暂时还没有好友呦～</p>
                         <a class="invitation-friend" href="javascript:void(0);">赶紧去邀请好友吧</a>
                     </div>
@@ -116,7 +116,7 @@
                         </tbody>
                     </table>
                     <div class="list-info-null" id="info-awaken">
-                        <img style="width: 2.7rem;height: 2.07rem;display: block;margin: 0.78rem auto 0.47rem;" src="dist/images/friend-null-two_03.jpg" alt="">
+                        <img style="width: 2.7rem;height: 2.07rem;display: block;margin: 0.78rem auto 0.47rem;" src="http://file.xcmad.com/dist/images/friend-null-two_03.jpg" alt="">
                         <p>暂时没有需要唤醒的好友</p>
                         <a class="invitation-friend" href="javascript:void(0);">赶紧去邀请好友吧</a>
                     </div>
@@ -130,13 +130,13 @@
                     <ul class="clearFix">
                         <li>
                             <a href="invitation://shortcutWx">
-                                <img src="dist/images/shortcut-share-ong_03.jpg" alt="">
+                                <img src="http://file.xcmad.com/dist/images/shortcut-share-ong_03.jpg" alt="">
                                 <p>微信邀请</p>
                             </a>
                         </li>
                         <li>
                             <a href="invitation://shortcutFace">
-                                <img src="dist/images/shortcut-share-two_05.jpg" alt="">
+                                <img src="http://file.xcmad.com/dist/images/shortcut-share-two_05.jpg" alt="">
                                 <p>面对面邀请</p>
                             </a>
                         </li>
@@ -144,25 +144,25 @@
                     <ul class="clearFix">
                         <li>
                             <a href="invitation://shortcutFriend">
-                                <img src="dist/images/shortcut-share-three_10.jpg" alt="">
+                                <img src="http://file.xcmad.com/dist/images/shortcut-share-three_10.jpg" alt="">
                                 <p>朋友圈邀请</p>
                             </a>
                         </li>
                         <li>
                             <a href="invitation://shortcutWxAll">
-                                <img src="dist/images/shortcut-share-four_10.jpg" alt="">
+                                <img src="http://file.xcmad.com/dist/images/shortcut-share-four_10.jpg" alt="">
                                 <p>微信群发</p>
                             </a>
                         </li>
                         <li>
                             <a href="invitation://shortcutQq">
-                                <img src="dist/images/shortcut-share-five_10.jpg" alt="">
+                                <img src="http://file.xcmad.com/dist/images/shortcut-share-five_10.jpg" alt="">
                                 <p>QQ好友</p>
                             </a>
                         </li>
                         <li>
                             <a href="invitation://shortcutDx">
-                                <img src="dist/images/shortcut-share-six_10.jpg" alt="">
+                                <img src="http://file.xcmad.com/dist/images/shortcut-share-six_10.jpg" alt="">
                                 <p>短信邀请</p>
                             </a>
                         </li>
@@ -177,8 +177,10 @@
             var scrollNum = 1; //翻页
             var typeNum = 1; //类型
             var trNum = 0; //列表索引
+            var times = null;
             // 列表切换
             $('.option-items').on('click', function () {
+                clearTimeout(times);
                 var index = $(this).index();
                 if(index == 0){
                     $('#romanceActive').children().remove();
@@ -196,7 +198,9 @@
                     scrollNum = 1;
                 }
                 dropload.resetload();
-                friendList("", typeNum, scrollNum);
+                times = setTimeout(function(){
+                    friendList("", typeNum, scrollNum);
+                },1000);
             })
             // 唤醒模态框
 
@@ -255,12 +259,12 @@
                         '                                    <div class="talk-modal">\n' +
                         '                                        <div class="clearFix">\n' +
                         '                                            <a href="javascript:void(0);" class="remind-dx" data-dx="'+list.uid+'">\n' +
-                        '                                                <img src="dist/images/friend-m-dx_03.jpg" alt="">\n' +
+                        '                                                <img src="http://file.xcmad.com/dist/images/friend-m-dx_03.jpg" alt="">\n' +
                         '                                                <p>短信提醒</p>\n' +
                         '                                            </a>\n' +
                         '                                            <span></span>\n' +
                         '                                            <a href="friend://wx='+ list.uid +'" class="remind-wx">\n' +
-                        '                                                <img src="dist/images/friend-m-wx_03.jpg" alt="">\n' +
+                        '                                                <img src="http://file.xcmad.com/dist/images/friend-m-wx_03.jpg" alt="">\n' +
                         '                                                <p>微信提醒</p>\n' +
                         '                                            </a>\n' +
                         '                                        </div>\n' +
@@ -405,8 +409,12 @@
                 scrollRange: function(me) {
                 },
                 loadDownFn: function (me) {
-                    scrollNum++;
-                    friendList(me, typeNum, scrollNum);
+                    clearTimeout(times);
+                    times = setTimeout(function(){
+                        scrollNum++;
+                        friendList(me, typeNum, scrollNum);
+                    },1000);
+
                 },
             });
             //分享模态

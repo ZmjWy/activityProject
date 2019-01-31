@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>邀请好友</title>
+    <link rel="stylesheet" href="http://file.xcmad.com/dist/style/reset.css">
+    <link rel="stylesheet" href="http://file.xcmad.com/dist/style/inviteFriends.css">
+    <link rel="stylesheet" href="http://file.xcmad.com/dist/style/shareAll.css">
+    <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1276034961'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1276034961' type='text/javascript'%3E%3C/script%3E"));
+        document.getElementById("cnzz_stat_icon_1276034961").style.display = "none";
+    </script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/fontsizeset.js'></script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/jquery.js'></script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/intercept.config.js'></script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/common.js'></script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/inviteFrinds.js'></script>
+</head>
+<body>
+    <div class="container invite-friends">
+        <div class="banner">
+            <div class="slogan">邀请好友就赚钱，最高12元/位</div>
+            <div class="record">
+                <div class="unit">
+                    <p>已邀请好友</p>
+                    <p><span style="font-size: .48rem;" id="inviteF">0</span><span>位</span></p>
+                </div>
+                <div class="unit">
+                    <p>有效好友</p>
+                    <p><span style="font-size: .48rem;" id="validF">0</span><span>位</span></p>
+                </div>
+                <div class="unit">
+                    <p>累计收益</p>
+                    <p><span style="font-size: .48rem;" id="income">0</span><span>元</span></p>
+                </div>
+            </div>
+            <div class="invitecode" id="copy-invite">
+                <div class="copy"><img src="http://file.xcmad.com/dist/images/copy-invite_03.jpg" alt=""></div>
+                <p class="code">我的邀请码：<span id="invate_code"></span></p>
+            </div>
+            <div class="tab clearFix">
+                <div>邀请好友</div>
+                <div class="friendlist">好友列表</div>
+                <div class="friendlist">唤醒好友</div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="content">
+                <div class="supplementary">
+                    <p>1、邀请好友：下载花生头条&nbsp<img src="http://file.xcmad.com/dist/images/invitefriends-subarrow.png">&nbsp填写您的邀请码</p>
+                    <p>2、有效好友：任意一天阅读满120金币</p>
+                    <p>3、奖励升级：有效好友达到指定数量可升级</p>
+                    <p>4、好友进贡：好友每日阅读搜索&nbsp<img src="http://file.xcmad.com/dist/images/invitefriends-subarrow.png">&nbsp师傅得分成</p>
+                </div>
+                <div class="reward-7 clearFix">
+                    <div>
+                        <img class="inf-jiangli" src="http://file.xcmad.com/dist/images/invitefriends-jiangli.jpg">
+                        <p class="jiangliqu">当前奖励区间：<span id="show_money"></span>元/位</p>
+                    </div>
+                    <!--奖励规则定位到页面的奖励如何发放位置-->
+                    <div>
+                        <a href="#miao">
+                            奖励规则
+                            <img src="http://file.xcmad.com/dist/images/invitefriends-littlearrow.png">
+                        </a>
+
+                    </div>
+                </div>
+                <div class="mingjie clearFix">
+                    <div class="bonus-unit">
+                        <div class="bonus-unit-1">
+                            <img src="http://file.xcmad.com/dist/images/bonus-unit-16.png">
+                        </div>
+                        <div class="bonus-unit-2">
+                            <p>第1~2位</p>
+                            <p>8元/位</p>
+                        </div>
+                    </div>
+                    <img class="bonus-unit-arrow" src="http://file.xcmad.com/dist/images/bonus-unit-arrow.png">
+                    <div class="bonus-unit">
+                        <div class="bonus-unit-1">
+                            <img src="http://file.xcmad.com/dist/images/bonus-unit-25.5.png">
+                        </div>
+                        <div class="bonus-unit-2">
+                            <p>第3~5位</p>
+                            <p>8.5元/位</p>
+                        </div>
+                    </div>
+                    <img class="bonus-unit-arrow" src="http://file.xcmad.com/dist/images/bonus-unit-arrow.png">
+                    <div class="bonus-unit">
+                        <div class="bonus-unit-1">
+                            <img src="http://file.xcmad.com/dist/images/bonus-unit-90.png">
+                        </div>
+                        <div class="bonus-unit-2">
+                            <p>第6~15位</p>
+                            <p>9元/位</p>
+                        </div>
+                    </div>
+                    <img class="bonus-unit-arrow-2 arrow-21" src="http://file.xcmad.com/dist/images/bonus-unit-arrow-2.png">
+                    <div class="bonus-unit unit-142">
+                        <div class="bonus-unit-1">
+                            <img src="http://file.xcmad.com/dist/images/bonus-unit-142.5.png">
+                        </div>
+                        <div class="bonus-unit-2">
+                            <p>第16~30位</p>
+                            <p>9.5元/位</p>
+                        </div>
+                    </div>
+                    <img class="bonus-unit-arrow-2 arrow-22" src="http://file.xcmad.com/dist/images/bonus-unit-arrow-2.png">
+                    <div class="bonus-unit unit-200">
+                        <div class="bonus-unit-1">
+                            <img src="http://file.xcmad.com/dist/images/bonus-unit-200.png">
+                        </div>
+                        <div class="bonus-unit-2">
+                            <p>第31~50位</p>
+                            <p>10元/位</p>
+                        </div>
+                    </div>
+                    <img class="bonus-unit-arrow arrow-41" src="http://file.xcmad.com/dist/images/bonus-unit-arrow-4.png">
+                    <div class="bonus-unit unit-525">
+                        <div class="bonus-unit-1">
+                            <img src="http://file.xcmad.com/dist/images/bonus-unit-525.png">
+                        </div>
+                        <div class="bonus-unit-2">
+                            <p>第51~100位</p>
+                            <p>10.5元/位</p>
+                        </div>
+                    </div>
+                    <img class="bonus-unit-arrow arrow-42" src="http://file.xcmad.com/dist/images/bonus-unit-arrow-4.png">
+                    <div class="bonus-unit unit-1100">
+                        <div class="bonus-unit-1">
+                            <img src="http://file.xcmad.com/dist/images/bonus-unit-1100.png">
+                        </div>
+                        <div class="bonus-unit-2">
+                            <p>第101~200位</p>
+                            <p>11元/位</p>
+                        </div>
+                    </div>
+                    <img class="bonus-unit-arrow-2 arrow-3" src="http://file.xcmad.com/dist/images/bonus-unit-arrow-3.png">
+                    <div class="bonus-unit unit-3450">
+                        <div class="bonus-unit-1">
+                            <img src="http://file.xcmad.com/dist/images/bonus-unit-3450.png">
+                        </div>
+                        <div class="bonus-unit-2">
+                            <p>第201~500位</p>
+                            <p>11.5元/位</p>
+                        </div>
+                    </div>
+                    <img class="bonus-unit-arrow arrow-5" src="http://file.xcmad.com/dist/images/bonus-unit-arrow.png">
+                    <div class="unit-61200">
+                        <div class="bonus-unit-3">
+                            <p>12元/位</p>
+                        </div>
+                        <div class="bonus-unit-4">
+                            <img class="unit-img61200" src="http://file.xcmad.com/dist/images/bonus-unit-61200.png">
+                            <p>第501~5600位</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="all-money">
+                    <img src="http://file.xcmad.com/dist/images/invitefriends-hb-2.png">
+                    <p>&nbsp;累计赚超：<span>66666</span>元</p>
+                </div>
+                <div class="withdraw-cash clearFix">
+                    <p><img src="http://file.xcmad.com/dist/images/invitefriends-qb-2.png"> 快速提现金额：<span id="withdraw-money">￥0.00</span></p>
+                    <button type="button" class="withdraw-cash-btn">立即提现</button>
+                </div>
+            </div>
+            <div  id="miao" class="second-content">
+                <div>
+                    <div class="content-2-title">邀请奖励如何发放？</div>
+                    <div class="formula">好友邀请奖励=基础奖励+额外奖励</div>
+                    <img  class="reward" src="http://file.xcmad.com/dist/images/invitefriends-basicreward.jpg">
+                    <div class="basicreward">
+                        <table class="ba-table">
+                            <tr class="table-title">
+                                <th>分天发放</th>
+                                <th>奖励金额</th>
+                                <th>发放条件</th>
+                            </tr>
+                            <tr class="table-row">
+                                <td>第一天</td>
+                                <td>2元</td>
+                                <td  rowspan="4"></td>
+                            </tr>
+                            <tr class="table-row">
+                                <td>第二天</td>
+                                <td>1元</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td>第三天</td>
+                                <td>1元</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td>第四天</td>
+                                <td>2元</td>
+                            </tr>
+                        </table>
+                        <div class="table-exp-1">好友当天阅读<br>满120金币</div>
+                    </div>
+                    <img class="reward-2" src="http://file.xcmad.com/dist/images/invitefriends-extrareward.jpg">
+                    <div class="basicreward">
+                        <table class="ba-table">
+                            <tr class="table-title">
+                                <th>邀请好友数</th>
+                                <th>奖励金额</th>
+                                <th>发放条件</th>
+                            </tr>
+                            <tr class="table-row">
+                                <td>第1~2位</td>
+                                <td>2元/人</td>
+                                <td rowspan="9"></td>
+                            </tr>
+                            <tr class="table-row">
+                                <td>第3~5位</td>
+                                <td>2.5元/人</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td>第6~15位</td>
+                                <td>3元/人</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td>第16~30位</td>
+                                <td>3.5元/人</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td>第31~50位</td>
+                                <td>4元/人</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td>第51~100位</td>
+                                <td>4.5元/人</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td>第101~200位</td>
+                                <td>5元/人</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td>第201~500位</td>
+                                <td>5.5元/人</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td>第501~5600位</td>
+                                <td>6元/人</td>
+                            </tr>
+                        </table>
+                        <div class="table-exp-2">获得4天全部<br>基础奖励后<br>可领取</div>
+                    </div>
+                    <img class="reward-3" src="http://file.xcmad.com/dist/images/invitefriends-extrareward-2.jpg">
+                    <div class="basicreward">
+                        <table class="ba-table">
+                            <tr  class="table-title">
+                                <th></th>
+                                <th>好友完成下列任务</th>
+                                <th>师傅获得</th>
+                            </tr>
+                            <tr class="table-row-3">
+                                <td style="font-weight: 700;">阅读进贡</td>
+                                <td>阅读满100金币</td>
+                                <td>30金币</td>
+                            </tr>
+                            <tr class="table-row-3">
+                                <td rowspan="3"></td>
+                                <td>搜索金币满400</td>
+                                <td>100金币</td>
+                            </tr>
+                            <tr class="table-row-3">
+                                <td>搜索金币满600</td>
+                                <td>150金币</td>
+                            </tr>
+                            <tr class="table-row-3">
+                                <td>搜索金币满2000</td>
+                                <td>250金币</td>
+                            </tr>
+                        </table>
+                        <div class="table-exp-3">
+                            搜索进贡
+                        </div>
+                    </div>
+                </div>
+                <div class="howinvite">
+                    <div class="howinvite-title">怎么邀请好友</div>
+                    <div class="floor">
+                        <div class="floor-flow">
+                            <img class="liucheng-1" src="http://file.xcmad.com/dist/images/invitefriends-liucheng-01.png">
+                            <img class="flow" src="http://file.xcmad.com/dist/images/invitefriends-arrow.png">
+                            <img class="liucheng-2" src="http://file.xcmad.com/dist/images/invitefriends-liucheng-02.png">
+                            <img class="flow" src="http://file.xcmad.com/dist/images/invitefriends-arrow.png">
+                            <img class="liucheng-3" src="http://file.xcmad.com/dist/images/invitefriends-liucheng-03.png">
+                        </div>
+                        <div class="clearFix floor-flow-text">
+                            <p>点击下方按钮<br/>分享给好友</p>
+                            <p>好友打开链接<br/>下载安装</p>
+                            <p>好友登录阅读<br/>您获得奖励</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="invitation-share">
+            <ul class="clearFix">
+                <li>
+                    <a href="javascript:androidObj.callBack(androidObj.shortcutFriend);">
+                        <img src="http://file.xcmad.com/dist/images/invitation-share-friend_42.jpg" alt="">
+                        <p>朋友圈邀请</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:androidObj.callBack(androidObj.shortcutWx);">
+                        <img src="http://file.xcmad.com/dist/images/invitation-share-wx_42.jpg" alt="">
+                        <p>微信邀请</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:androidObj.callBack(androidObj.shortcutFace);">
+                        <img src="http://file.xcmad.com/dist/images/invitation-share-face_42.jpg" alt="">
+                        <p>面对面邀请</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:androidObj.callBack(androidObj.shortcutQq);">
+                        <img src="http://file.xcmad.com/dist/images/invitation-share-qq_42.jpg" alt="">
+                        <p>QQ邀请</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

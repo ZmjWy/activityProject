@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>幸运抽奖</title>
+    <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1276034961'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1276034961' type='text/javascript'%3E%3C/script%3E"));
+        document.getElementById("cnzz_stat_icon_1276034961").style.display = "none";
+    </script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/fontsizeset.js'></script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/jquery.js'></script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/intercept.config.js'></script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/common.js'></script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/turntable.js'></script>
+    <link rel="stylesheet" href="http://file.xcmad.com/dist/style/reset.css">
+    <link rel="stylesheet" href="http://file.xcmad.com/dist/style/turntable.css">
+</head>
+<body>
+    <div class="turntable container">
+        <section class="turntable-animate">
+            <a class="rule-btn" href="javascript:void(0);">
+                <span>活动规则</span>
+                <img src="http://file.xcmad.com/dist/images/turntable-rule-btn_03.png" alt="">
+            </a>
+            <a id="scroll-rule" class="rule-btn lucky-draw" href="javascript:void(0);">
+                <span>抽奖记录</span>
+                <img src="http://file.xcmad.com/dist/images/turntable-rule-btn_03.png" alt="">
+            </a>
+            <div class="winning-record">
+                <ul id="record-animate">
+                </ul>
+            </div>
+            <div class="turntable-suggest">
+                <img src="http://file.xcmad.com/dist/images/turntable-logo.png" alt="">
+                <p>活动时间：2019.01.30~02.14</p>
+                <p>您还剩 <span id="degree">0</span> 次抽奖机会</p>
+                <p>分享给不同的好友，可获得更多的抽奖机会 <br/>
+                    同一好友领奖仅能获得一次抽奖机会</p>
+            </div>
+            <div class="turntable-activity">
+                <img id="turntable-pointer" src="http://file.xcmad.com/dist/images/turntable-btn.png" alt="pointer">
+                <img id="turntable-double" src="http://file.xcmad.com/dist/images/turntable-goods.png" alt="turntable">
+            </div>
+        </section>
+        <section class="turntable-rule">
+            <h3>活动规则</h3>
+            <ul>
+                <li>
+                    <span>1</span>每天邀请不同好友参加活动，可获得5次抽奖机会，仅限当日有效
+                </li>
+                <li>
+                    <span>2</span>金币及现金直接发放，可在【抽奖记录】和【我的】-【收入明细】中查看
+                </li>
+                <li>
+                    <span>3</span>实物奖请等待工作人员电话联系发放
+                </li>
+                <li>
+                    <span>4</span>活动最终解释权归花生头条所有
+                </li>
+            </ul>
+        </section>
+        <section class="turntable-record">
+            <h3>今日抽奖记录</h3>
+            <div class="record-list">
+                <div class="clearFix">
+                    <p>奖项</p>
+                    <p>抽奖时间</p>
+                    <p>状态</p>
+                </div>
+                <div class="no-record">
+                    <img src="http://file.xcmad.com/dist/images/turntable-no-record_03.jpg" alt="">
+                    <p>您今天还没有抽奖<br/>赶快去分享抽奖吧</p>
+                </div>
+                <ul class="record-list-show" style="display: none;">
+                </ul>
+            </div>
+        </section>
+    </div>
+    <div class="turntable-share">
+        <ul class="clearFix">
+            <li>
+                <a id="turntable-friend" href="javascript:void (0);">
+                    <img src="http://file.xcmad.com/dist/images/turntable-1_02.jpg" alt="">
+                    <p>微信朋友圈</p>
+                </a>
+            </li>
+            <li>
+                <a id="turntable-wxShare" href="javascript:void (0);">
+                    <img src="http://file.xcmad.com/dist/images/turntable-2_03.jpg" alt="">
+                    <p>微信好友</p>
+                </a>
+            </li>
+            <li>
+                <a id="turntable-qqZoneShare" href="javascript:void (0);">
+                    <img src="http://file.xcmad.com/dist/images/turntable-3_03.jpg" alt="">
+                    <p>QQ空间</p>
+                </a>
+            </li>
+            <li>
+                <a id="turntable-qqShare" href="javascript:void (0);">
+                    <img src="http://file.xcmad.com/dist/images/turntable-4_03.jpg" alt="">
+                    <p>QQ好友</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,579 @@
+.friend-list{
+  overflow: hidden;
+  & .friend-list-banner{
+    width: 100%;
+    height: 2.4rem;
+    position: relative;
+    & img{
+      width: 100%;
+      height: 2.4rem;
+    }
+    & .look-history{
+      position: absolute;
+      top:0.1rem;
+      right: 0;
+      font-size: 0.3rem;
+      width: 2.15rem;
+      height: 0.7rem;
+      line-height: 0.7rem;
+      text-align: center;
+      background: rgba(71, 71, 71, 0.5);
+      border-radius: 0.7rem 0 0 0.7rem;
+      color: #fff;
+    }
+    & ul{
+      padding: 0.8rem 0 0.35rem;
+      height: 2.4rem;
+      width: 100%;
+      position: absolute;
+      left: auto;
+      top: 0;
+      right: auto;
+      & li{
+        text-align: center;
+        float: left;
+        width: 32%;
+        position: relative;
+        height: 1rem;
+        overflow: hidden;
+        & p{
+          font-size: 0.46rem;
+          color: #fff;
+          line-height: 1;
+        }
+        & p:nth-child(1){
+          margin: 0.07rem 0 0.1rem;
+        }
+        & p:nth-child(2){
+          font-size: 0.3rem;
+        }
+        &>div{
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 2px;
+          &>span{
+            float: left;
+            display: block;
+            width: 1px;
+            height: 1rem;
+            background: -webkit-linear-gradient(#ef3220, #ca1200, #ef3220); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#ef3220, #ca1200, #ef3220); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#ef3220, #ca1200, #ef3220); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#ef3220, #ca1200, #ef3220); /* 标准的语法 */
+          }
+          &>span:nth-child(2){
+            background: -webkit-linear-gradient(#ff4f3e, #ff6e61, #ff4f3e); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#ff4f3e, #ff6e61, #ff4f3e); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#ff4f3e, #ff6e61, #ff4f3e); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#ff4f3e, #ff6e61, #ff4f3e); /* 标准的语法 */
+          }
+        }
+      }
+      & li:last-child{
+        width: 36%;
+      }
+    }
+  }
+  & .friend-list-content{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0.2rem;
+    padding-top: 0.4rem;
+    margin-top: -0.2rem;
+    position: relative;
+    & .list-option{
+      width: 100%;
+      position: relative;
+      border-bottom: 1px solid #f3f3f3;
+      & li:not(:last-child){
+        width: 33.3333%;
+        float: left;
+        line-height: 0.68rem;
+        text-align: center;
+        font-size: 0.36rem;
+        font-weight: bold;
+      }
+      & li:last-child{
+        width: 12%;
+        height: 3px;
+        background-color: #ff5337;
+        border-radius: 3px;
+        position: absolute;
+        bottom: -2px;
+        transform: translate(86%, 0px) !important;
+        -ms-transform: translate(86%, 0px) !important;
+        -moz-transform: translate(86%, 0px) !important;
+        -webkit-transform: translate(86%, 0px) !important;
+        -o-transform: translate(86%, 0px) !important;
+        left: 0%;
+        -webkit-transition: left 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+        transition: left 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+        will-change: left;
+      }
+    }
+    & .list-info{
+      width: 100%;
+      padding: 0.3rem 0.26rem 0;
+      & table{
+        display: block;
+        & thead{
+          display: block;
+          & tr{
+            display: block;
+            width: 100%;
+          }
+        }
+        & tbody{
+          width: 100%;
+          display: block;
+          & tr{
+            width: 100%;
+            display: block;
+          }
+        }
+      }
+      & .info-active, & .info-awaken{
+        width: 100%;
+        & th{
+          background-color: #fa3637;
+          color: #fff;
+          height: 0.62rem;
+          line-height: 0.62rem;
+          text-align: center;
+          font-size: 0.34rem;
+          position: relative;
+          display: block;
+          float: left;
+          &>div{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 2px;
+            &>span{
+              float: left;
+              display: block;
+              width: 1px;
+              height: 0.62rem;
+              background: -webkit-linear-gradient(#f23132, #ca1200, #f23132); /* Safari 5.1 - 6.0 */
+              background: -o-linear-gradient(#f23132, #ca1200, #f23132); /* Opera 11.1 - 12.0 */
+              background: -moz-linear-gradient(#f23132, #ca1200, #f23132); /* Firefox 3.6 - 15 */
+              background: linear-gradient(#f23132, #ca1200, #f23132); /* 标准的语法 */
+            }
+            &>span:nth-child(2){
+              background: -webkit-linear-gradient(#ff4f3e, #ff6e61, #ff4f3e); /* Safari 5.1 - 6.0 */
+              background: -o-linear-gradient(#ff4f3e, #ff6e61, #ff4f3e); /* Opera 11.1 - 12.0 */
+              background: -moz-linear-gradient(#ff4f3e, #ff6e61, #ff4f3e); /* Firefox 3.6 - 15 */
+              background: linear-gradient(#ff4f3e, #ff6e61, #ff4f3e); /* 标准的语法 */
+            }
+          }
+        }
+        & th:nth-child(1){
+          width: 30%;
+        }
+        & th:nth-child(2){
+          width: 34%;
+        }
+        & th:nth-child(3){
+          width: 36%;
+        }
+        & td:nth-child(1){
+          width: 30%;
+          & p{
+            width: 98%;
+            margin: 0 auto;
+          }
+        }
+        & td:nth-child(2){
+          width: 34%;
+          & p{
+            width: 98%;
+            margin: 0 auto;
+            color: #f00;
+          }
+        }
+        & td:nth-child(3){
+          width: 36%;
+          & p{
+            width: 98%;
+            margin: 0 auto;
+            color: #f00;
+          }
+        }
+        & td{
+          display: block;
+          float: left;
+          height: 0.7rem;
+          line-height: 0.7rem;
+          border-bottom: 1px solid #f3f3f3;
+          & p{
+            font-size: 0.3rem;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+      & .info-awaken{
+        & td:nth-child(3) {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &>p {
+            width: 1.1rem;
+            height: 0.55rem;
+            text-align: center;
+            line-height: 0.53rem;
+            margin: 0 auto;
+            color: #0030fe;
+            font-size: 0.26rem;
+            border-radius: 0.55rem;
+            border: 1px solid #0030fe;
+          }
+          & .option-prompt-style{
+            width: 1.1rem;
+            height: 0.55rem;
+            text-align: center;
+            line-height: 0.53rem;
+            margin: 0 auto;
+            color: #595959;
+            font-size: 0.26rem;
+            border-radius: 0.55rem;
+            border: 1px solid #595959;
+          }
+          & .talk-modal-box{
+            position: absolute;
+            top: 1px;
+            left: -2.78rem;
+            z-index: 999;
+            & .talk-modal{
+              position: relative;
+              background-image: url("http://file.xcmad.com/dist/images/friend-s-m_03.png");
+              background-repeat: no-repeat;
+              background-size: 100% 100%;
+              width: 2.9rem;
+              height: 1.42rem;
+              background-color: #fff;
+              &>div{
+                overflow: hidden;
+                width: 2.65rem;
+                & a{
+                  display: block;
+                  float: left;
+                  color: #000;
+                  text-decoration: none;
+                  width: 49%;
+                  overflow: hidden;
+                  & img{
+                    width: 0.7rem;
+                    height: 0.7rem;
+                    display: block;
+                    margin: 0.16rem auto 0.1rem;
+                  }
+                  & p{
+                    text-align: center;
+                    font-size: 0.24rem;
+                    line-height: 1;
+                  }
+                }
+                &>span{
+                  float: left;
+                  display: block;
+                  width: 1px;
+                  height: 0.92rem;
+                  margin-top: 0.22rem;
+                  background: -webkit-linear-gradient(#ffefef, #ff9899, #ffefef); /* Safari 5.1 - 6.0 */
+                  background: -o-linear-gradient(#ffefef, #ff9899, #ffefef); /* Opera 11.1 - 12.0 */
+                  background: -moz-linear-gradient(#ffefef, #ff9899, #ffefefe); /* Firefox 3.6 - 15 */
+                  background: linear-gradient(#ffefef, #ff9899, #ffefef); /* 标准的语法 */
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    & .list-info-awaken{
+      width: 100%;
+      padding: 0.3rem 0.26rem 0;
+      & table{
+        display: block;
+        & thead{
+          display: block;
+          & tr{
+            display: block;
+            width: 100%;
+          }
+        }
+        & tbody{
+          width: 100%;
+          display: block;
+          & tr{
+            width: 100%;
+            display: block;
+          }
+        }
+      }
+      & .inaction-awaken{
+        width: 100%;
+        & th{
+          background-color: #fa3637;
+          color: #fff;
+          height: 0.62rem;
+          line-height: 0.62rem;
+          text-align: center;
+          font-size: 0.34rem;
+          position: relative;
+          display: block;
+          float: left;
+          &>div{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 2px;
+            &>span{
+              float: left;
+              display: block;
+              width: 1px;
+              height: 0.62rem;
+              background: -webkit-linear-gradient(#f23132, #ca1200, #f23132); /* Safari 5.1 - 6.0 */
+              background: -o-linear-gradient(#f23132, #ca1200, #f23132); /* Opera 11.1 - 12.0 */
+              background: -moz-linear-gradient(#f23132, #ca1200, #f23132); /* Firefox 3.6 - 15 */
+              background: linear-gradient(#f23132, #ca1200, #f23132); /* 标准的语法 */
+            }
+            &>span:nth-child(2){
+              background: -webkit-linear-gradient(#ff4f3e, #ff6e61, #ff4f3e); /* Safari 5.1 - 6.0 */
+              background: -o-linear-gradient(#ff4f3e, #ff6e61, #ff4f3e); /* Opera 11.1 - 12.0 */
+              background: -moz-linear-gradient(#ff4f3e, #ff6e61, #ff4f3e); /* Firefox 3.6 - 15 */
+              background: linear-gradient(#ff4f3e, #ff6e61, #ff4f3e); /* 标准的语法 */
+            }
+          }
+        }
+        & th:nth-child(1){
+          width: 25%;
+        }
+        & th:nth-child(2){
+          width: 26%;
+        }
+        & th:nth-child(3){
+          width: 27%;
+        }
+        & th:nth-child(4){
+          width: 22%;
+        }
+        & td:nth-child(1){
+          width: 25%;
+          & p{
+            width: 98%;
+            margin: 0 auto;
+          }
+        }
+        & td:nth-child(2){
+          width: 26%;
+          & p{
+            width: 98%;
+            margin: 0 auto;
+            color: #f00;
+          }
+        }
+        & td:nth-child(3){
+          width: 27%;
+          & p{
+            width: 98%;
+            margin: 0 auto;
+          }
+        }
+        & td{
+          border-bottom: 1px solid #f3f3f3;
+          display: block;
+          float: left;
+          height: .8rem;
+          &>p{
+            line-height: 0.8rem;
+            height: 0.8rem;
+            font-size: 0.3rem;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+        & td:nth-child(4) {
+          width: 22%;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &>p {
+            width: 1.1rem;
+            height: 0.55rem;
+            text-align: center;
+            line-height: 0.53rem;
+            margin: 0 auto;
+            color: #0030fe;
+            font-size: 0.26rem;
+            border-radius: 0.55rem;
+            border: 1px solid #0030fe;
+          }
+          & .option-prompt-style{
+            width: 1.1rem;
+            height: 0.55rem;
+            text-align: center;
+            line-height: 0.53rem;
+            margin: 0 auto;
+            color: #595959;
+            font-size: 0.26rem;
+            border-radius: 0.55rem;
+            border: 1px solid #595959;
+          }
+          & .talk-modal-box{
+            position: absolute;
+            top: 1px;
+            left: -2.78rem;
+            z-index: 999;
+            & .talk-modal{
+              position: relative;
+              background-image: url("http://file.xcmad.com/dist/images/friend-s-m_03.png");
+              background-repeat: no-repeat;
+              background-size: 100% 100%;
+              width: 2.9rem;
+              height: 1.42rem;
+              background-color: #fff;
+              &>div{
+                overflow: hidden;
+                width: 2.65rem;
+                & a{
+                  display: block;
+                  float: left;
+                  color: #000;
+                  text-decoration: none;
+                  width: 49%;
+                  overflow: hidden;
+                  & img{
+                    width: 0.7rem;
+                    height: 0.7rem;
+                    display: block;
+                    margin: 0.16rem auto 0.1rem;
+                  }
+                  & p{
+                    text-align: center;
+                    font-size: 0.24rem;
+                    line-height: 1;
+                  }
+                }
+                &>span{
+                  float: left;
+                  display: block;
+                  width: 1px;
+                  height: 0.92rem;
+                  margin-top: 0.22rem;
+                  background: -webkit-linear-gradient(#ffefef, #ff9899, #ffefef); /* Safari 5.1 - 6.0 */
+                  background: -o-linear-gradient(#ffefef, #ff9899, #ffefef); /* Opera 11.1 - 12.0 */
+                  background: -moz-linear-gradient(#ffefef, #ff9899, #ffefefe); /* Firefox 3.6 - 15 */
+                  background: linear-gradient(#ffefef, #ff9899, #ffefef); /* 标准的语法 */
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  & .modal-close{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(255, 255, 255, 0);
+    top: 0;
+    left: auto;
+    right: auto;
+    z-index: 99;
+  }
+  & .list-info-null{
+    overflow: hidden;
+    & p{
+      font-size: 0.3rem;
+      color: #adadad;
+      text-align: center;
+      margin: 0.2rem 0 0.25rem 0;
+    }
+    & a{
+      color: #fff;
+      font-size: 0.34rem;
+      text-decoration: none;
+      width: 3.6rem;
+      height: 0.72rem;
+      line-height: 0.72rem;
+      text-align: center;
+      display: block;
+      margin: 0 auto;
+      background-color: #fa3637;
+      border-radius: 0.72rem;
+    }
+  }
+  & .invitation-shortcut-share{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: auto;
+    right: auto;
+    z-index: 999;
+    &>div{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      &>div{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: auto;
+        right: auto;
+        padding: 0.35rem 0.4rem 0.6rem;
+        background-color: #fafafa;
+        & ul{
+          & a{
+            display: block;
+            text-decoration: none;
+            color: #000;
+          }
+        }
+        & ul:nth-child(1){
+          width: 100%;
+          margin-bottom: 0.44rem;
+          & li{
+            width: 50%;
+            float: left;
+            & img{
+              width: 2.35rem;
+              display: block;
+              margin: 0 0 0.1rem 0.6rem;
+            }
+            & p{
+              font-size: 0.26rem;
+              text-align: center;
+            }
+          }
+        }
+        & ul:nth-child(2){
+          width: 100%;
+          & li{
+            width: 25%;
+            float: left;
+            text-align: center;
+            & img{
+              width: 1.19rem;
+              height: 1.17rem;
+            }
+            & p{
+              font-size: 0.26rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

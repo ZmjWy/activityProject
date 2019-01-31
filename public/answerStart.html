@@ -10,21 +10,21 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <title>新人答题奖励</title>
-    <script type=text/javascript src='dist/script/fontsizeset.js'></script>
-    <script type=text/javascript src='dist/script/jquery.js'></script>
-    <script type=text/javascript src='dist/script/common.js'></script>
-    <script type=text/javascript src='dist/script/mtils.js'></script>
-    <link rel="stylesheet" href="dist/style/reset.css">
-    <link rel="stylesheet" href="dist/style/answerqu.css">
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/fontsizeset.js'></script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/jquery.js'></script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/common.js'></script>
+    <script type=text/javascript src='http://file.xcmad.com/dist/script/mtils.js'></script>
+    <link rel="stylesheet" href="http://file.xcmad.com/dist/style/reset.css">
+    <link rel="stylesheet" href="http://file.xcmad.com/dist/style/answerqu.css">
 </head>
 <body>
 <div class="answer container" style="padding-bottom: 1rem;overflow-y: scroll;">
-  <div class="answer-banner"><img src="dist/images/answer-banner.jpg"></div>
+  <div class="answer-banner"><img src="http://file.xcmad.com/dist/images/answer-banner.jpg"></div>
   <div class="asmainbody">     
  
     <form id="commitForm">
       <div class="allQuestion clearFix">
-        <div><img class="answerStartNumber" src="dist/images/answerStartNumber1.jpg"></div>
+        <div><img class="answerStartNumber" src="http://file.xcmad.com/dist/images/answerStartNumber1.jpg"></div>
         <div  class="startBlock">            
           <p class="startQuestion">什么是花生头条？</p>  
           <label class="startAnswer">       
@@ -47,7 +47,7 @@
 
 
       <div class="allQuestion">
-        <div><img class="answerStartNumber" src="dist/images/answerStartNumber2.jpg"></div>
+        <div><img class="answerStartNumber" src="http://file.xcmad.com/dist/images/answerStartNumber2.jpg"></div>
         <div  class="startBlock">            
           <p class="startQuestion">花生头条为什么给用户发钱？</p>  
           <label class="startAnswer">       
@@ -69,7 +69,7 @@
 
 
       <div class="allQuestion">
-        <div><img class="answerStartNumber" src="dist/images/answerStartNumber3.jpg"></div>
+        <div><img class="answerStartNumber" src="http://file.xcmad.com/dist/images/answerStartNumber3.jpg"></div>
         <div  class="startBlock">            
           <p class="startQuestion">金币汇率受什么影响？</p>  
           <label class="startAnswer">       
@@ -91,7 +91,7 @@
 
 
       <div class="allQuestion">
-        <div><img class="answerStartNumber" src="dist/images/answerStartNumber4.jpg"></div>
+        <div><img class="answerStartNumber" src="http://file.xcmad.com/dist/images/answerStartNumber4.jpg"></div>
         <div  class="startBlock">            
           <p class="startQuestion">每天都能轻松快速赚取大量金币的方式？</p>  
           <label class="startAnswer">       
@@ -112,7 +112,7 @@
      
 
       <div class="allQuestion">
-        <div><img class="answerStartNumber" src="dist/images/answerStartNumber5.jpg"></div>
+        <div><img class="answerStartNumber" src="http://file.xcmad.com/dist/images/answerStartNumber5.jpg"></div>
         <div  class="startBlock">            
           <p class="startQuestion">邀请好友有什么好处？</p>  
           <label class="startAnswer">       
@@ -130,7 +130,7 @@
           <input type="radio" checked name="question4" value="D" class="question11">
         </div>
       </div>
-      <div class="asbutton"><img class="answerStartButton" src="dist/images/answerStartButton.jpg"></div>
+      <div class="asbutton"><img class="answerStartButton" src="http://file.xcmad.com/dist/images/answerStartButton.jpg"></div>
         </form>
        </div>
 </div>
@@ -152,7 +152,7 @@
           })
           if(!!arrErr.length){
               console.log(arrErr.join('、') + '答案错误')
-              window.createModal.show('dist/images/modal-answer_07.jpg','1.26rem',('<span style="color: #e84538;">'+arrErr.join('、')+'</span>'+'题答案错误！'),undefined,'我知道了');
+              window.createModal.show('http://file.xcmad.com/dist/images/modal-answer_07.jpg','1.26rem',('<span style="color: #e84538;">'+arrErr.join('、')+'</span>'+'题答案错误！'),undefined,'我知道了');
           }else{
               $.ajax({
                   url: ctxs + '/act/h5/newUserAnswerQuestion?tel_num='+getString.tel_num,
@@ -162,7 +162,7 @@
                   jsonpCallback: "comment",
                   success: function(data){
                       if(data.status == 0){
-                          window.createModal.show('dist/images/modal-1000_03.jpg','3.56rem','恭喜获得新人答题奖励','answer://callbackList','返回任务列表');
+                          window.createModal.show('http://file.xcmad.com/dist/images/modal-1000_03.jpg','3.56rem','恭喜获得新人答题奖励','answer://callbackList','返回任务列表');
                       }else{
                           toast(data.msg);
                       }
