@@ -6,7 +6,7 @@
   width: 100%;
   height: 13.2rem;
   position: relative;
-  background: url(http://file.xcmad.com/dist/images/turntable-bg.jpg) no-repeat scroll top center / 100%;
+  background: url(http://file.xcmad.com/dist/images/turntable-bg.jpg) no-repeat scroll top center / 100% 100%;
 }
 .turntable-animate .rule-btn {
   display: block;
@@ -53,7 +53,7 @@
   text-align: center;
 }
 .turntable-animate .turntable-suggest img {
-  width: 4.5rem;
+  width: 60%;
 }
 .turntable-animate .turntable-suggest p:nth-child(2) {
   font-size: 0.24rem;
@@ -75,27 +75,27 @@
   margin-bottom: 0.2rem;
 }
 .turntable-animate .turntable-activity {
-  width: 7rem;
-  height: 7.1rem;
+  width: 93.3333%;
+  padding-bottom: 93.3333%;
   margin: 0 auto;
-  background: url(http://file.xcmad.com/dist/images/turntable-big.png) no-repeat scroll top center / 100%;
+  background: url(http://file.xcmad.com/dist/images/turntable-big.png) no-repeat scroll top center / 100% 100%;
   position: relative;
 }
 .turntable-animate .turntable-activity img[alt="pointer"] {
   position: absolute;
-  width: 2.14rem;
-  height: 2.5rem;
+  width: 30.5714%;
+  height: auto;
   z-index: 10;
-  top: 2.1rem;
-  left: 2.43rem;
+  left: 0; top: 0; right: 0; bottom: 0;
+  margin: auto;    /* 有了这个就自动居中了 */
 }
 .turntable-animate .turntable-activity img[alt="turntable"] {
   position: absolute;
-  width: 6.14rem;
-  height: 6.14rem;
+  width: 87.7142%;
+  height: auto;
   z-index: 5;
-  top: 0.43rem;
-  left: 0.43rem;
+  left: 0; top: 0; right: 0; bottom: 0;
+  margin: auto;    /* 有了这个就自动居中了 */
   transition: transform 4s cubic-bezier(0.25, 0.1, 0.25, 1);
   -webkit-transition: -webkit-transform 4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
@@ -110,7 +110,7 @@
   margin-bottom: 0.16rem;
 }
 .turntable-rule ul {
-  width: 6.45rem;
+  width: 86%;
   margin: 0 auto;
 }
 .turntable-rule ul li {
@@ -144,7 +144,7 @@
   margin-bottom: 0.2rem;
 }
 .turntable-record .record-list {
-  width: 6.64rem;
+  width: 88.5333%;
   margin: 0 auto;
   padding-bottom: 0.12rem;
   border-radius: 5px 5px 0 0 ;
@@ -159,7 +159,7 @@
   color: #c97402;
 }
 .turntable-record .record-list .no-record {
-  width: 6.42rem;
+  width: 94.7142%;
   height: 5.88rem;
   margin: 0 auto;
   background: #fff;
@@ -176,7 +176,7 @@
   text-align: center;
 }
 .turntable-record .record-list ul {
-  width: 6.42rem;
+  width: 96.6867%;
   margin: 0 auto;
 }
 .turntable-record .record-list ul li {
@@ -230,7 +230,7 @@
 .turntable-share ul li a p {
   font-size: 0.3rem;
   text-align: center;
-  padding: 0.2rem 0 0.36rem;
+  padding: 0 0 .1rem;
 }
 .turntable-share ul li:last-child {
   border: none;

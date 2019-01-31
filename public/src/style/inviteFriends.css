@@ -132,22 +132,22 @@
 }
 .supplementary{
     width: 89.5652%;
-    height: 1.48rem;
+    overflow: hidden;
     margin: .45rem  auto .3rem auto;
 }
 .supplementary>p{
-    font-size: .3rem;
+    font-size: .28rem;
     color: #c10101;
 }
 .supplementary>p>img{
     width:.26rem;
 }
 .reward-7{
-    /*margin-top: .33rem;*/
-    margin-left: .44rem;
+    width: 96.4%;
+    padding-left: .2rem;
     height: .69rem;
     overflow: hidden;
-
+    margin: 0 auto;
 }
 .reward-7>div:nth-of-type(1){
     float: left;
@@ -167,11 +167,9 @@
     color: #f95821;
 }
 .reward-7>div:nth-of-type(2){
-    /*float: right;*/
-    /*right: 1rem;*/
+    float: right;
     width: 1.8rem;
     height: .68rem;
-    margin-left:71.6%;
     text-indent: 0.15rem;
     background: linear-gradient(to right,#55dc7e,#37b35f);
     border-top-left-radius:.34rem;
@@ -234,12 +232,13 @@
 .bonus-unit-arrow{
     height: .19rem;
     float: left;
-    margin: .62rem .07rem;
+    margin: .62rem 1.3%;
+    width: 4%;
 }
 .bonus-unit-arrow-2{
     height: .28rem;
     float: right;
-    right: .85rem;
+    right: 13%;
 
 }
 .arrow-21{
@@ -259,26 +258,24 @@
     top: 3.55rem;
 }
 .unit-200{
-    float: right;
     right: 0;
     position: absolute;
     top: 3.96rem;
 }
 .arrow-41{
-    float: right;
-    right: 1.85rem;
+    right: 28.9231%;
     position: absolute;
     top:3.98rem;
 }
 .unit-525{
     float: right;
-    right: 2.3rem;
+    right: 35.5231%;
     position: absolute;
     top:3.98rem;
 }
 .arrow-42{
     float: right;
-    right: 4.17rem;
+    right: 64.4462%;
     position: absolute;
     top:3.98rem;
 }
@@ -303,17 +300,13 @@
 
 .arrow-5{
     float: left;
-    left: 1.97rem;
+    left: 28.9231%;
     position: absolute;
     top:2rem;
 }
-
-
-
-
 .unit-61200{
     float: left;
-    left: 2.4rem;
+    left: 35.5231%;
     position: absolute;
     top: 1.72rem;
     background: url('http://file.xcmad.com/dist/images/bonus-unit-61200-bg-yellow.png')  no-repeat scroll top center/100% 100%;
