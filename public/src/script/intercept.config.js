@@ -10,6 +10,7 @@
  * takeCashActivity:跳转提现界面
  * userMoney:跳转累计零钱
  * friendListActivity:跳转好友列表
+ * webCommonActivity:跳webview
  * mainActivityTv:跳转视频首页
  * mainActivityNew:跳转新闻首页
  * getDeviceInfos:获取设备信息
@@ -21,6 +22,7 @@
  * getUserInfos:获取数据
  * loginActivity:启动登录
  * toast:弹出系统Toast
+ * wxText:微信分享（纯文本）
  */
 var androidObj = {
     callBack: function(uri){
@@ -55,6 +57,7 @@ var androidObj = {
     takeCashActivity:'huasheng://xcm/system/start_activity?ui_name=TakeCashActivity',
     userMoney: 'huasheng://xcm/system/start_activity?ui_name=UserMoneyDetailActivity',
     friendListActivity: 'huasheng://xcm/system/start_activity?ui_name=FriendListActivity',
+    webCommonActivity:'huasheng://xcm/system/start_activity?ui_name=WebCommonActivity&url=',
     mainActivityTv:'huasheng://xcm/system/start_activity?ui_name=MainActivity&tab_index=1',
     mainActivityNew:'huasheng://xcm/system/start_activity?ui_name=MainActivity&tab_index=0',
     copy:'huasheng://xcm/system/copy?content=',
@@ -66,6 +69,7 @@ var androidObj = {
     getUserInfos: 'huasheng://xcm/user/get_user_infos',
     loginActivity:'huasheng://xcm/system/start_activity?ui_name=LoginActivity',
     toast:'huasheng://xcm/system/toast?message=xxx',
+    wxText:'huasheng://xcm/share/wx_text?text=',
     shareCall: [
         {
             url:'/share/wx',
@@ -95,9 +99,10 @@ var androidObj = {
     shareTerrace: function(back){
         back();
     },
-    shareData: function (jsonMessage,obj){
+    shareData: function (jsonMessage,obj,call){
         obj.tel_num = jsonMessage.tel_num;
         obj.wx_name = jsonMessage.wx_name;
+        call(jsonMessage);
     },
     getDevice: function (jsonMessage,obj){
         obj.local_ip = jsonMessage.local_ip;

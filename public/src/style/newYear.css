@@ -1,0 +1,58 @@
+html, body{
+    height: 100%;
+}
+.year-content{
+    padding-top: 0.75rem;
+    overflow: hidden;
+    min-height: 100%;
+    background: url("http://file.xcmad.com/dist/images/new_year_bg.jpg") no-repeat top center /100% 100%;
+}
+img{
+    display: block;
+}
+.year-banner{
+    width: 72.5333%;
+    margin: 0 auto;
+}
+.year-text{
+    width: 82.4%;
+    margin: 0 auto 0.5rem;
+    position: relative;
+}
+.year-text img{
+    width: 100%;
+}
+.year-text textarea{
+    display:block;
+    width: 88.4193%;
+    height: 1.1rem;
+    resize:none;
+    outline: none;
+    position: absolute;
+    bottom: 0.44rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: transparent;
+    border: none;
+    line-height: 0.5rem;
+    font-size: 0.3rem;
+    color: #e5bc6d;
+}
+.year-role{
+    width: 82.4%;
+    margin: 0 auto 0.6rem;
+}
+.year-role p{
+    font-size: 0.32rem;
+    color: #f8ecc0;
+    line-height: 1.5;
+}
+.year-role span{
+    color: #bfcaff;
+    text-decoration: underline;
+}
+.year-btn{
+    width: 42%;
+    margin: 0 auto 1.15rem;
+}

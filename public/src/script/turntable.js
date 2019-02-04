@@ -44,7 +44,7 @@ $(function(){
         onFriend('qq',androidObj.shareQq);
     });
     /**
-     * 奖励记录
+     * 奖励记录分享回调刷新
      */
     function rewardNum(){
         $.ajax({

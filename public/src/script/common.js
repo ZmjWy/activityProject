@@ -51,7 +51,7 @@ var GetQueryString = function GetQueryString() {
     var isIOS;
     var hrefList = [{
         href: 'http://www.161914.com/a/2b0a16c0',
-        downUrl: 'http://file.xcmad.com/app-o_share_121-release.apk'
+        downUrl: 'https://kkapi.oss-cn-beijing.aliyuncs.com/huasheng_share.apk'
     },{
         href: 'http://www.161914.com/a/33689db0',
         downUrl: 'https://kkapi.oss-cn-beijing.aliyuncs.com/huasheng_share_2.apk'
